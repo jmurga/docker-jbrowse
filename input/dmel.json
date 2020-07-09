@@ -1,0 +1,13 @@
+{
+   "tracks":[],
+   "TRACK DEFAULTS" : {
+      "autocomplete" : "all",
+      "class" : "feature"
+   },
+   "db_args" : {
+      "-adaptor" : "memory",
+      "-dir" : "docs/tutorial/data_files"
+   },
+   "description" : "Droseu Database",
+   "db_adaptor" : "Bio::DB::SeqFeature::Store"
+}
