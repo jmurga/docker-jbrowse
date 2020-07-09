@@ -33,5 +33,4 @@ ENV DATA_DIR=/data
 VOLUME /data
 ADD docker-entrypoint.sh /root
 
-
 # CMD ['/docker-entrypoint.sh']
