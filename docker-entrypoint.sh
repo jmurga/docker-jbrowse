@@ -1,8 +1,4 @@
 #!/bin/bash
-export JBROWSE_SAMPLE_DATA=/conda/opt/jbrowse/sample_data
-export JBROWSE_DATA=/conda/opt/jbrowse/data
-export JBROWSE=/conda/opt/jbrowse
-export DATA_DIR=/data
 
 cd ${JBROWSE}
 
