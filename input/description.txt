@@ -1,0 +1,3 @@
+pi="Nucleotide_diversity,_average_number_of_nucleotide_differences_per_site_between_any_two_sequences_(Jukes_and_Cantor_1969,_Nei_and_Gojobori_1986,_Nei_1987)"
+theta="Nucleotide_polymorphism,_proportion_of_nucleotide_sites_that_are_expected_to_be_polymorphic_in_any_suitable_sample_(Watterson_1975,_Tajima_1993,_1996)"
+fst="Fst_statistic_(Weir_&_Cockerham_et_al_1984)"

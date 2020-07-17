@@ -19,7 +19,7 @@ RUN conda init bash
 RUN conda config --set auto_activate_base false
 
 RUN rm -rf /usr/share/nginx/html && ln -s /conda/opt/jbrowse/ /usr/share/nginx/html && \
-    ln -s /jbrowse/data /conda/opt/jbrowse/data && \
+    mkdir -p /conda/opt/jbrowse/data && \
     sed -i '/include += {dataRoot}\/tracks.conf/a include += {dataRoot}\/datasets.conf' /conda/opt/jbrowse/jbrowse.conf && \
     sed -i '/include += {dataRoot}\/tracks.conf/a include += {dataRoot}\/../datasets.conf' /conda/opt/jbrowse/jbrowse.conf
 
@@ -31,6 +31,6 @@ ENV JBROWSE=/conda/opt/jbrowse
 ENV DATA_DIR=/data
 
 VOLUME /data
-ADD docker-entrypoint.sh /root
+ADD docker-entrypoint.sh /root/docker-entrypoint.sh 
 
 # CMD ['/docker-entrypoint.sh']
