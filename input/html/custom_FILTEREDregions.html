@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <!-- **************************************************************************** -->
+        <!-- SITE SETTINGS -->
+        <!-- **************************************************************************** -->
+
+        <!-- Page title -->
+        <title>Genome accessibility</title>
+
+        <!-- Site metadata -->
+        <meta charset='UTF-8'>
+
+        <!-- **************************************************************************** -->
+        <!-- STYLES -->
+        <!-- **************************************************************************** -->
+        <link rel="stylesheet" type="text/css" href="../../css/custom_main.css" />
+        <style>body {max-width: 1000px;}</style>
+
+    </head>
+
+    <body>
+
+        <div class="classDiv_help_dialog">
+            <div class="mainData">
+
+            <dl>
+                <p align="justify">Not all regions of the genome are equally accessible to short-read sequencing technologies and thus some called bases in resequenced genomes are more prone to false positives than others. The 1000 Genomes Project (The 1000 Genomes Project Consortium 2010, 2015) provide an assessment of the regions of the genome that are accessible to next-generation sequencing by creating <a href="https://www.nature.com/nature/journal/v526/n7571/extref/nature15393-s1.pdf#subsection.9.2" target="_blank">genome masks</a>, in which each base in the genome is coded as follows:</p>
+
+	<dd><ul>
+	<li>N - the base is an N in the reference genome GRCh37</li>
+	<li>L - depth of coverage is much lower than average</li>
+	<li>H - depth of coverage is much higher than average</li>
+	<li>Z - too many reads with zero mapping quality overlap this position</li>
+	<li>Q - the average mapping quality at the position is too low</li>
+	<li>P - the base passed all filters</li>
+	<li>0 - an overlapping base was never observed in aligned reads</li>
+	</ul></dd>
+
+<p align="justify">Regions marked as N, L, H, Z, or Q are less accessible to short reads and more prone to false positives. </p>
+
+<p align="justify">PopHuman incorporates the <b>Pilot-style mask</b> that was produced using the same definition as used in the 1000 Genomes Project Pilot Paper (The 1000 Genomes Project Consortium 2010) and that excludes the portion of the genome where depth of coverage (summed across all samples) is higher or lower than the average depth by a factor of 2-fold. It also excludes sites where >20% of overlapping reads had mapping quality of zero. Overall, this Pilot-style mask in the autosomal chromosomes results in about 6.8% of bases marked as N, 1.1% marked L, 0.2% marked H, and 2.4% marked Z. The remaining 89.4% of passed are marked passed (P) and correspond to 95.9% of non-N bases (The 1000 Genomes Project Consortium 2015).</p><br>
+            </dl>
+            <dl>  
+                <dt>+ References</dt>
+                <p align="justify">- The 1000 Genomes Project Consortium (2010). A map of human genome variation from population-scale sequencing. Nature 467: 1061-73. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/20981092" target="_blank">link</a>]</br>- The 1000 Genomes Project Consortium (2015). A global reference for human genetic variation. Nature, 526: 68-74. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/26432245" target="_blank">link</a>]</p><br>
+            </dl>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

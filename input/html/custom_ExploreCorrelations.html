@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <!-- **************************************************************************** -->
+                <!-- SITE SETTINGS -->
+                <!-- **************************************************************************** -->
+
+                <!-- Page title -->
+                <title>About PopFly</title>
+
+                <!-- Site metadata -->
+                <meta charset='UTF-8'>
+
+                <!-- **************************************************************************** -->
+                <!-- STYLES -->
+                <!-- **************************************************************************** -->
+                <link rel="stylesheet" type="text/css" href="../../css/custom_main.css" />
+        </head>
+        
+        <body>
+            <div class="classDiv_plotCorrelations" style="width:860px;">
+                <p align="justify">This section contains a tool that allows generating custom interactive plots to explore correlations among different genomic and geographical features estimated for each population.</p>
+                <p align="justify">When the user clicks on a specific population, its value is removed from the graph and the correlation statistics are re-calculated. Multiple points can be removed at once by selecting the corresponding area in the graph and clicking the “Toggle points” button. To reset all points, click the “Reset points” button.</p>
+                <p align="justify">This application has been developed using the <a href="http://shinyapps.io" target="_blank">Shinyapps</a> framework for R.</p>
+                <div>
+                    <iframe id="corrPlot" src="" width="850px" height="800px" align="middle"></iframe>
+                </div>
+            </div>
+        </body>
+</html>
+
+

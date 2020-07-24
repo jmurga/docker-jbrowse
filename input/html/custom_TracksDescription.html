@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <!-- **************************************************************************** -->
+                <!-- SITE SETTINGS -->
+                <!-- **************************************************************************** -->
+
+                <!-- Page title -->
+                <title>Tracks Description</title>
+
+                <!-- Site metadata -->
+                <meta charset='UTF-8'>
+
+                <!-- **************************************************************************** -->
+                <!-- STYLES -->
+                <!-- **************************************************************************** -->
+                <link rel="stylesheet" type="text/css" href="../../css/custom_main.css" />
+                <style>body {max-width: 1000px;}</style>
+
+        </head>
+        
+        <body>
+                <div class="classDiv_help_dialog">
+                    <div class="" style="text-align: justify";>
+                         <p align="justify">PopHuman contains +1000 tracks, including both variation statistics for the 26 1000GP populations, and reference tracks of the human hg19 reference sequence. Given the large number of tracks available, these can be filtered and selected using the “Select tracks” tool, which is displayed on the top left corner (below the navigation bar). This tool is used to narrow your search in order to finally find and select your track of interest, and this process can be done several times in order to finally get all the desired tracks selected.</p>
+                         <p align="justify">The filtering process is normally performed by refining your search using the menu on the left, in which track features are classified according to four major categories: Data selection (by metapopulation and/or population), Variation statistics, Visualization (only one available window size of 10 kb by now), and Reference tracks.</p>
+                         <p align="justify">Below, there is a brief description of all the tracks stored in PopHuman, including Variation statistics and Reference tracks:</p>
+                    </div>
+                    <div class="mainTracks" style="float: left; width: 49%; text-align: justify;">
+                    <dl>
+                    <dt><h2>Variation statistics</h2></dt>
+                        <dt>1. Frequency-based nucleotide variation</dt>
+                        <br>
+                        <dd><ul>
+<li><b>S.</b> Number of segregating sites per site (Nei 1987).</li>
+<li><b>S2.</b> Number of segregating sites per site, excluding unknown nucleotides in the outgroup (Nei 1987).</li>
+<!-- <li><b>Unknown.</b> Number of unknown sites in the outgroup.</li> -->
+<li><b>Pi.</b> Nucleotide diversity: average number of nucleotide differences per site between any two sequences (Jukes and Cantor 1969; Nei and Li 1979; Nei 1987).</li>
+<li><b>theta.</b> Nucleotide polymorphism: proportion of nucleotide sites that are expected to be polymorphic in any suitable sample (Watterson 1975; Tajima 1993, 1996).</li>
+<li><b>nuc_diversity_within.</b> Nucleotide diversity within the population (Hudson, Slatkin and Maddison 1992; Wakeley 1996).</li>
+<li><b>hap_diversity_within.</b> Haplotype diversity within the population (Hudson, Slatkin and Maddison 1992).</li>
+<!-- <li><b>DAF.</b> Derived allele frequency spectrum: distribution of derived allele frequencies (Ronen et al. 2013).</li> -->
+<li><b>Pneu.</b> Number of 4-fold (putatively neutral) segregating sites.</li>
+<li><b>Psel.</b> Number of 0-fold (putatively selected) segregating sites.</li>
+<!-- <li><b>mneu.</b> Number of 4-fold (putatively neutral) total sites.</li>
+<li><b>msel.</b> Number of 0-fold (putatively selected) total sites.</li> -->
+                        </ul></dd>
+                        <br>
+                        <dt>2. Divergence-based metrics</dt>
+                        <br>
+                        <dd><ul>
+<li><b>Divsites.</b> Number of divergent sites.</li>
+<li><b>D.</b> Proportion of sites with divergent nucleotides.</li>
+<li><b>K.</b> Nucleotide divergence per base pair, corrected by Jukes-Cantor (Jukes and Cantor 1969).</li>
+<li><b>Dneu.</b> Number of 4-fold (putatively neutral) divergent sites.</li>
+<li><b>Dsel.</b> Number of 0-fold (putatively selected) divergent sites.</li>
+                        </ul></dd>
+                        <br>
+                        <dt>3. Linkage disequilibrium</dt>
+                        <br>
+                        <dd><ul>
+<li><b>Wall_B.</b> Wall’s B summary statistic of linkage disequilibrium (Wall 1999), proportion of pairs of adjacent segregating sites that are congruent, with values approaching 1 indicating extensive congruence among adjacent segregating sites.</li>
+<li><b>Wall_Q.</b> Wall’s Q summary statistic of linkage disequilibrium (Wall 1999), proportion of pairs of adjacent segregating sites that are congruent.</li>
+<li><b>Rozas_ZA.</b> Rozas’s ZA summary statistics (Rozas et al 2001), average of r2 only between adjacent polymorphic sites.</li>
+<li><b>Rozas_ZZ.</b> Rozas’s ZZ summary statistics (Rozas et al 2001), Rozas’s ZA minus Kelly’s ZnS.</li>
+<li><b>Kelly_ZnS.</b> ZnS summary statistic (Kelly 1997), average pairwise r2 value.</li>
+<li><b>iHS.</b> Integrated haplotype score (Voight et al 2006), based on the frequency of alleles in regions of high LD. Only for autosomes.</li>
+                        </ul></dd>
+                        <br>
+                        <dt>4. Recombination</dt>
+                        <br>
+                        <dd><ul>
+<li><b>recomb_Bherer2017_females.</b> Recombination estimates (cM/Mb) from the refined genetic map by Bherer et al. 2017, which collects recombination events from six recent studies of human pedigrees, pertaining to a total of 104,246 informative meioses. Females map.</li>
+<li><b>recomb_Bherer2017_males.</b> Recombination estimates (cM/Mb) from the refined genetic map by Bherer et al. 2017, which collects recombination events from six recent studies of human pedigrees, pertaining to a total of 104,246 informative meioses. Males map.</li>
+<li><b>recomb_Bherer2017_sexavg.</b> Recombination estimates (cM/Mb) from the refined genetic map by Bherer et al. 2017, which collects recombination events from six recent studies of human pedigrees, pertaining to a total of 104,246 informative meioses. Values from the females/males maps are averaged.</li>
+
+<li><b>recomb_Genethon_females_1Mb.</b> Genethon genetic map based on 5,264 microsatellites for 8 CEPH families consisting of 134 individuals with 186 meioses. Females map.</li>
+<li><b>recomb_Genethon_males_1Mb.</b> Genethon genetic map based on 5,264 microsatellites for 8 CEPH families consisting of 134 individuals with 186 meioses. Males map.</li>
+<li><b>recomb_Genethon_sexavg_1Mb.</b> Genethon genetic map based on 5,264 microsatellites for 8 CEPH families consisting of 134 individuals with 186 meioses. Values from the females/males maps are averaged.</li>
+
+<li><b>recomb_Marshfield_females_1Mb.</b> Marshfield genetic map based on 8,325 short tandem repeat polymorphisms (STRPs) for 8 CEPH families consisting of 134 individuals with 186 meioses. Females map.</li>
+<li><b>recomb_Marshfield_males_1Mb.</b> Marshfield genetic map based on 8,325 short tandem repeat polymorphisms (STRPs) for 8 CEPH families consisting of 134 individuals with 186 meioses. Males map.</li>
+<li><b>recomb_Marshfield_sexavg_1Mb.</b> Marshfield genetic map based on 8,325 short tandem repeat polymorphisms (STRPs) for 8 CEPH families consisting of 134 individuals with 186 meioses. Values from the females/males maps are averaged.</li>
+
+<li><b>recomb_deCODE_females_1Mb.</b> deCODE genetic map based on 5,136 microsatellite markers for 146 families with a total of 1,257 meiotic events. Females map.</li>
+<li><b>recomb_deCODE_males_1Mb.</b> deCODE genetic map based on 5,136 microsatellite markers for 146 families with a total of 1,257 meiotic events. Males map.</li>
+<li><b>recomb_deCODE_sexavg_1Mb.</b> deCODE genetic map based on 5,136 microsatellite markers for 146 families with a total of 1,257 meiotic events. Values from the females/males maps are averaged.</li>
+
+                        </ul></dd>
+                        <br>
+                        <dt>5. Selection tests based on SFS and/or variability</dt>
+                        <br>
+                        <dd><ul>
+<li><b>Tajima_D.</b> Tajima's D test statistic (Tajima 1989), based on the differences between the number of segregating sites and the average number of nucleotide differences.</li>
+<li><b>FuLi_F.</b> Fu & Li's F test statistic (Fu and Li 1993), number of derived nucleotide variants observed only once in a sample with the mean pairwise difference between sequences.</li>
+<li><b>FuLi_D.</b> Fu & Li's D test statistic (Fu and Li 1993), number of derived nucleotide variants observed only once in a sample with the total number of derived nucleotide variants.</li>
+<li><b>FayWu_H.</b> Fay & Wu’s H test statistic (Fay and Wu 2000), number of derived nucleotide variants at low and high frequencies with the number of variants at intermediate frequencies.</li>
+<li><b>Zeng_E.</b> Zeng’s E test statistic (Zeng et al 2006), difference between θL and θW, sensitive to changes in high-frequency variants.</li>
+<li><b>Fst</b> Fst statistic (Hudson et al. 1992), measures average levels of gene flow based on allele frequencies under the infinite-sites model.</li>
+                        </ul></dd>
+                        <br>
+                        <dt>6. Selection tests based on the MKT</dt>
+                        <br>
+                        <dd><ul>
+<li><b>NI.</b> Neutrality index (Rand and Kann 1996), which summarizes the four values in an McDonald and Kreitman test (McDonald and Kreitman 1991) table as a ratio of ratios, computed as NI = (Psel/Pneu) / (Dsel/Dneu).</li>
+<li><b>alpha.</b> Proportion of substitutions that are adaptive (Charlesworth 1994; Smith and Eyre-Walker 2002), based on the McDonald and Kreitman test (McDonald and Kreitman 1991), which compares the amount of variation within species to the divergence between species at two types of site: synonymous and nonsynonymous sites. The test assumes that all synonymous mutations are neutral and that nonsynonymous mutations are either strongly deleterious, neutral, or strongly advantageous. For the calculation of this track, four-fold degenerate sites were used as synonymous (neutral) sites and zero-fold degenerate sites as nonsynonymous (putatively adaptive) sites, as alpha = 1 - ((Psel/Pneu) / (Dsel/Dneu)).</li>
+<li><b>DoS.</b> Direction of Selection (Stoletzki and Eyre-Walker 2011), difference between the proportion of nonsynonymous divergence and nonsynonymous polymorphism, computed as DoS = (Dsel/(Dsel+Dneu)) - (Psel/(Psel+Pneu)).</li>
+<li><b>Fisher1.</b> Fisher exact test p-value (Fisher 1922) for the McDonald and Kreitman test (McDonald and Kreitman 1991) 2x2 contingency table containing Dsel, Dneu, Psel and Pneu estimates, used to determine the significance of the MK test.</li>
+<li><b>Pneu_less5.</b> Number of 4-fold (putatively neutral) segregating sites with MAF<5% (Mackay et al 2012).</li>
+<li><b>Pneu_more5.</b> Number of 4-fold (putatively neutral) segregating sites with MAF>5% (Mackay et al 2012).</li>
+<li><b>Psel_less5.</b> Number of 0-fold (putatively selected) segregating sites with MAF<5% (Mackay et al 2012).</li>
+<li><b>Psel_more5.</b> Number of 0-fold (putatively selected) segregating sites with MAF>5% (Mackay et al 2012).</li>
+<li><b>Psel_neutral_less5.</b> Fraction of 0-fold segregating sites with DAF < 5% that are neutral, computed as Psel_neutral_less5 = (Psel x Pneu_less5/Pneu)) (Mackay et al 2012).</li>
+<li><b>Psel_neutral.</b> Fraction of new mutations that are neutral, calculated after removing the excess of sites at MAF<5% due to slightly deleterious mutations, calculated as Psel_neutral = Psel_neutral_less5 + Psel_more5 (Mackay et al 2012).</li>
+<li><b>Psel_weak.</b> Fraction of new mutations that are weakly deleterious and segregate at MAF<5%, computed as Psel_weak = Psel_less5 – Psel_neutral_less5 (Mackay et al 2012).</li>
+<li><b>alpha_cor.</b> Fraction of new mutations that are adaptive, calculated after removing slightly deleterious mutations as alpha_cor = 1-(Psel_neutral/Pneu)*(Dneu/Dsel) (Charlesworth 1994; Mackay et al 2012).</li>
+<li><b>Fisher2.</b> Fisher exact test p-value (Fisher 1922) for the McDonald and Kreitman test (McDonald and Kreitman 1991) 2x2 contingency table containing Dsel_neutral, Dneu, Psel and Pneu estimates, used to determine the significance of the MK test.</li>
+                        </ul></dd>
+                        <br>
+See also <b>Help -> Integrative MKT</b> for a complete description of the method applied to both sliding windows and individual genes.
+                        <br>
+              <!--          <dt>7. Population Differentiation</dt>
+                        <br>
+                        <dd><ul>
+<li><b>nucleotide_FST.</b> Average levels of gene flow based on allele frequencies, under the infinite-sites model (Hudson et al 1992).</li>
+<li><b>haplotype_FST.</b> Average levels of gene flow based on haplotype frequencies, under the infinite-sites model (Hudson et al 1992).</li>
+<li><b>Nei_GST.</b> Analysis of gene diversity (heterozygosity) within and between subpopulations (Nei 1973).</li>
+<li><b>Hudson_GST.</b> GST, HST and KST are Test statistics based on haplotype frequencies and/or the number of nucleotide differences between sequences (Hudson et al 1992).</li>
+<li><b>Hudson_HST.</b> GST, HST and KST are Test statistics based on haplotype frequencies and/or the number of nucleotide differences between sequences (Hudson et al 1992).</li>
+<li><b>Hudson_KST.</b> GST, HST and KST are Test statistics based on haplotype frequencies and/or the number of nucleotide differences between sequences (Hudson et al 1992).</li>
+                        </ul></dd>   -->
+                    </dl>
+                    </div>
+                    <div class="mainTracks" style="float: right; width: 49%; text-align: justify;">
+                                        <dl>
+                        <dt><h2>Reference tracks</h2></dt>
+                        <p>These tracks have been obtained from the UCSC Genome Browser.</p>
+                        <dt>1. Sequencing and annotation</dt>
+                        <br>
+                        <dd><ul>
+                            <li><b>Gene annotations.</b> Gene annotations in the human hg19 reference genome. This track is a set of gene predictions based on data from RefSeq, GenBank, CCDS, Rfam, and the tRNA Genes track. It includes both protein-coding genes and non-coding RNA genes. Annotations in this track are linked to the NCBI and UCSC databases. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=genes&hgta_track=knownGene&hgta_table=knownGene&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Reference Sequence.</b> Reference sequence of the human hg19 genome. [<a href="http://genome.ucsc.edu/cgi-bin/hgGateway?db=hg19" target="_blank">Track information</a>]</li>
+                            <li><b>Alignability of 36mers by GEM from ENCODE/CRG(Guigo).</b> Measures how often the sequence found at a particular location (36mers) aligns within the whole genome. It tolerates up to 2 mismatches. Ranges from 0 to 1. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=wgEncodeMapability&hgta_table=wgEncodeCrgMapabilityAlign36mer&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Gaps.</b> Gaps in the assembly represented as black boxes. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=gap&hgta_table=gap&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Mappability DAC Blacklisted Regions from ENCODE/DAC(Kundaje).</b> Identifies regions of the reference genome that are troublesome for high throughput sequencing aligners. Troubled regions may be due to repetitive elements or other anomalies. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=wgEncodeMapability&hgta_table=wgEncodeDacMapabilityConsensusExcludable&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Uniqueness of 35bp Windows from ENCODE/OpenChrom(Duke).</b> Measures sequence uniqueness throughout the reference genome. Ranges from 0 to 1. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=wgEncodeMapability&hgta_table=wgEncodeDukeMapabilityUniqueness35bp&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                        </ul></dd>
+                        <br>
+                        <dt>2. Regulation</dt>
+                        <br>
+                        <dd><ul>
+                            <li><b>Conserved Transcription Factor Binding Sites (TFBS).</b> This track contains the location and score of TFBSs conserved in the human/mouse/rat alignment. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=regulation&hgta_track=tfbsConsSites&hgta_table=tfbsConsSites&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>CpG Islands.</b> This track shows CpG islands that are associated with genes, particularly housekeeping genes, in vertebrates. CpG islands are regions where CpGs are present at significantly higher levels than is typical for the genome as a whole. CpG islands in repeats are masked. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=regulation&hgta_track=cpgIslandExt&hgta_table=cpgIslandExt&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>ORegAnno.</b> This track displays literature-curated regulatory regions, transcription factor binding sites, and regulatory polymorphisms from ORegAnno (Open Regulatory Annotation). [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=regulation&hgta_track=oreganno&hgta_table=oreganno&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Vista Enhancers.</b> The VISTA Enhancer Browser identifies distant-acting transcriptional enhancers in the human genome by coupling the identification of evolutionary conserved non-coding sequences with a moderate throughput mouse transgenesis enhancer assay. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=regulation&hgta_track=vistaEnhancers&hgta_table=vistaEnhancers&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                        </ul></dd>
+                        <br>
+                        <dt>3. Comparative genomics</dt>
+                        <br>
+                        <dd><ul>
+                            <li><b>100 vertebrates Basewise Conservation by PhyloP.</b> This track shows multiple alignments of 100 vertebrate species and measurements of evolutionary conservation using phyloP from the PHAST package, for all species. [<a href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?hgsid=599249271_1Fk9h42WUxhscoNj98dH4AUV3Sc6&c=chr7&g=cons100way" target="_blank">Track information</a>]</li>
+                            <li><b>100 vertebrates Conserved Elements (phastConsElements100way).</b> This track shows the conserved elements obtained using PhastCons. The predicted elements are segments of the alignment that are likely to have been "generated" by the conserved state of the phylo-HMM. [<a href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?hgsid=599249271_1Fk9h42WUxhscoNj98dH4AUV3Sc6&c=chr7&g=cons100way" target="_blank">Track information</a>]</li>
+                            <li><b>100 vertebrates conservation by PhastCons.</b> This track shows multiple alignments of 100 vertebrate species and measurements of evolutionary conservation using PhastCons from the PHAST package, for all species. [<a href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?hgsid=599249271_1Fk9h42WUxhscoNj98dH4AUV3Sc6&c=chr7&g=cons100way" target="_blank">Track information</a>]</li>
+                            <li><b>Genomic Evolutionary Rate Profiling (GERP).</b> GERP is a method for producing position-specific estimates of evolutionary constraint using maximum likelihood evolutionary rate estimation. It also discovers "constrained elements" where multiple positions combine to give a signal that is indicative of a putative functional element; this track shows the position-specific scores only, not the element predictions. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=compGeno&hgta_track=allHg19RS_BW&hgta_table=allHg19RS_BW&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                        </ul></dd>
+                        <br>
+                        <dt>4. Variation</dt>
+                        <br>
+                        <dd><ul>
+                        <!--    <li><b>1000 Genomes Phase 3 Integrated Variant Calls.</b> This track shows 84.7 million single nucleotide polymorphisms (SNPs), 3.6 million short insertions/deletions (indels), and 60,000 structural variants discovered by the 1000 Genomes Project through its Phase 3 sequencing of 2,504 genomes from 26 populations worldwide. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=varRep&hgta_track=tgpPhase3&hgta_table=tgpPhase3&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>  -->
+                            <li><b>1000 Genomes Project Phase 3 Paired-end Accessible Regions - Pilot Criteria.</b> This track shows which genome regions are more or less accessible to next generation sequencing methods that use short, paired-end reads. Pilot stringency regions cover 94.5% of non-N bases in the genome. [<a href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?hgsid=599249271_1Fk9h42WUxhscoNj98dH4AUV3Sc6&c=chr7&g=tgpPhase3Accessibility" target="_blank">Track information</a>]</li>
+                            <li><b>1000 Genomes Project Phase 3 Paired-end Accessible Regions - Strict Criteria.</b> This track shows which genome regions are more or less accessible to next generation sequencing methods that use short, paired-end reads. Strict regions cover 75.5% (76.9% on autosomes). Each site meeting the Strict criteria also passes the Pilot criteria. [<a href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?hgsid=599249271_1Fk9h42WUxhscoNj98dH4AUV3Sc6&c=chr7&g=tgpPhase3Accessibility" target="_blank">Track information</a>]</li>
+                            <li><b>DGV Struct Var Database of Genomic Variants: Structural Var Regions (CNV, Inversion, In/del).</b> This track displays copy number variants (CNVs), insertions/deletions (InDels), inversions and inversion breakpoints annotated by the Database of Genomic Variants (DGV), which contains genomic variations observed in healthy individuals. [<a href="https://genome.ucsc.edu/cgi-bin/hgTrackUi?hgsid=599249271_1Fk9h42WUxhscoNj98dH4AUV3Sc6&c=chr7&g=dgvPlus" target="_blank">Track information</a>]</li>
+                            <li><b>Simple Nucleotide Polymorphisms (dbSNP 147).</b> This track contains information about single nucleotide polymorphisms and small insertions and deletions (indels), from dbSNP build 147. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=varRep&hgta_track=snp147&hgta_table=snp147&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                        </ul></dd>
+                        <br>
+                        <dt>5. Repeats</dt>
+                        <br>
+                        <dd><ul>
+                            <li><b>Repeating Elements: RepeatMasker.</b> This track shows a detailed annotation of the repeats that are present in the query sequence. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=rep&hgta_track=rmsk&hgta_table=rmsk&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Segmental Dups.</b> This track shows regions detected as putative genomic duplications (>1 kb, >90% similar) within the golden path. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=rep&hgta_track=genomicSuperDups&hgta_table=genomicSuperDups&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                            <li><b>Simple Tandem Repeats (STRs).</b> This track displays simple tandem repeats (possibly imperfect repeats) located by Tandem Repeats Finder (TRF), which is specialized for this purpose. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=rep&hgta_track=simpleRepeat&hgta_table=simpleRepeat&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
+                        </ul></dd>
+                        <br>
+
+               <!--         <dt><h2>Data selection</h2></dt>
+            <dt>Metapopulation</dt>
+                        <br>
+            <dd><ul>
+                            <li><b>AFR.</b> African.</li>
+                            <li><b>EAS.</b> East Asian.</li> 
+                            <li><b>EUR.</b> European.</li>
+                            <li><b>AMR.</b> Ad Mixed American.</li> 
+                            <li><b>SAS.</b> South Asian.</li> 
+                        </ul></dd>
+                        <br>
+            <dt>Population</dt>
+                        <br>
+            <dd><ul>
+                            <li><b>CHB.</b> Han Chinese in Bejing, China. Belongs to the EAS (East Asian) metapopulation.</li>
+                            <li><b>JPT.</b> Japanese in Tokyo, Japan. Belongs to the EAS (East Asian) metapopulation.</li>
+                            <li><b>CHS.</b> Southern Han Chinese. Belongs to the EAS (East Asian) metapopulation.</li>
+                            <li><b>CDX.</b> Chinese Dai in Xishuangbanna, China. Belongs to the EAS (East Asian) metapopulation.</li>
+                            <li><b>KHV.</b> Kinh in Ho Chi Minh City, Vietnam. Belongs to the EAS (East Asian) metapopulation.</li>
+                            <li><b>CEU.</b> Utah Residents (CEPH) with Northern and Western European Ancestry. Belongs to the EUR (European) metapopulation.</li>
+                            <li><b>TSI.</b> Toscani in Italia. Belongs to the EUR (European) metapopulation.</li>
+                            <li><b>FIN.</b> Finnish in Finland. Belongs to the EUR (European) metapopulation.</li>
+                            <li><b>GBR.</b> British in England and Scotland. Belongs to the EUR (European) metapopulation.</li>
+                            <li><b>IBS.</b> Iberian Population in Spain. Belongs to the EUR (European) metapopulation.</li>
+                            <li><b>YRI.</b> Yoruba in Ibadan, Nigeria. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>LWK.</b> Luhya in Webuye, Kenya. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>GWD.</b> Gambian in Western Divisions in the Gambia. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>MSL.</b> Mende in Sierra Leone. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>ESN.</b> Esan in Nigeria. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>ASW.</b> Americans of African Ancestry in SW USA. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>ACB.</b> African Caribbeans in Barbados. Belongs to the AFR (African) metapopulation.</li>
+                            <li><b>MXL.</b> Mexican Ancestry from Los Angeles USA. Belongs to the AMR (Ad Mixed American) metapopulation.</li>
+                            <li><b>PUR.</b> Puerto Ricans from Puerto Rico. Belongs to the AMR (Ad Mixed American) metapopulation.</li>
+                            <li><b>CLM.</b> Colombians from Medellin, Colombia. Belongs to the AMR (Ad Mixed American) metapopulation.</li>
+                            <li><b>PEL.</b> Peruvians from Lima, Peru. Belongs to the AMR (Ad Mixed American) metapopulation.</li>
+                            <li><b>GIH.</b> Gujarati Indian from Houston, Texas. Belongs to the SAS (South Asian) metapopulation.</li>
+                            <li><b>PJL.</b> Punjabi from Lahore, Pakistan. Belongs to the SAS (South Asian) metapopulation.</li>
+                            <li><b>BEB.</b> Bengali from Bangladesh. Belongs to the SAS (South Asian) metapopulation.</li>
+                            <li><b>STU.</b> Sri Lankan Tamil from the UK. Belongs to the SAS (South Asian) metapopulation.</li>
+                            <li><b>ITU.</b> Indian Telugu from the UK. Belongs to the SAS (South Asian) metapopulation.</li>
+                        </ul></dd>
+                        <br>
+        -->
+
+                        
+                    </dl>
+                    </div>
+                </div>
+                <br>
+                <div class="classDiv_help_dialog" style="text-align:justify;">
+                    <dl class="classDl_references" style="text-align: justify;">
+                        <dt>&nbsp;&nbsp;&nbsp;+ References</dt>
+                        <br>
+                        <dd><ul>
+<li>Charlesworth, B. (1994) The effect of background selection against deleterious mutations on weakly selected, linked variants. Genet. Res. 63: 213-27. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/8082838" target="_blank">link</a>]</li>
+<li>Fay, J.C. and C.-I. Wu (2000). Hitchhiking under positive Darwinian selection. Genetics 155: 1405-1413 [<a href="https://www.ncbi.nlm.nih.gov/pubmed/10880498" target="_blank">link</a>]</li>
+<li>Fisher, R. (1922). On the interpretation of chi-square from contingency tables, and the calculation of P. Journal of the Royal Stat. Soc. 85: 87-94.</li>
+<li>Fu, Y. X. and Li, W. H. (1993) Statistical test of neutrality of mutations. Genetics 133: 693-709. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/8454210" target="_blank">link</a>]</li>
+<li>Hill, W. G. and Robertson, A. (1968) Linkage disequilibrium in finite populations. Theor. Appl. Genet. 38: 226-231. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/24442307" target="_blank">link</a>]</li>
+<li>Hudson, R. R., <i>et al</i>. (1992) Estimation of levels of gene flow from DNA sequence data. Genetics 1992 132: 583-9. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/1427045" target="_blank">link</a>]</li>
+<li>Jukes, T. H. and Cantor, C. R. (1969) Evolution of protein molecules, pp. 21-32 in <i>Mammalian protein metabolism></i>, edited by H. N. Munro. Academic Press, New York.</li>
+<li>Kelly, J. K. (1997) A test of neutrality based on interlocus associations. Genetics 146: 1197-1206. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/9215920" target="_blank">link</a>]</li>
+<li>Kong, A., <i>et al</i>. (2010) Fine-scale recombination rate differences between sexes, populations and individuals. Nature 467: 1099-103. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/20981099" target="_blank">link</a>]</li>
+<li>Mackay, T. F. <i>et al</i>. (2012) The Drosophila melanogaster Genetic Reference Panel. Nature 482: 173-8. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/22318601" target="_blank">link</a>]</li>
+<li>McDonald, J. H. and Kreitman, M. (1991) Adaptive protein evolution at the Adh locus in Drosophila. Nature 351: 652-654. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/1904993" target="_blank">link</a>]</li>
+<li>Nei, M. (1987) Molecular Evolutionary Genetics. Columbia University Press, New York.</li>                       
+<li>Nei, M. and Li W.H. (1979) Mathematical model for studying genetic variation in terms of restriction endonucleases. Proc Natl Acad Sci U S A 76, 5269–5273. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/291943" target="_blank">link</a>]</li>
+<li>Rand D. M., Kann L. M. (1996) Excess amino acid polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Mol. Biol. Evol. 13: 735–748. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/8754210" target="_blank">link</a>]</li>
+<li>Rozas, J., M. Gullaud, G. Blandin, and M. Aguade (2001). DNA variation at the rp49 gene region of Drosophila simulans: evolutionary inferences from an unusual haplotype structure. Genetics 158: 1147-1155. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/11454763" target="_blank">link</a>]</li>
+<li>Smith, N. G. and Eyre-Walker, A. (2002) Adaptive protein evolution in Drosophila. Nature 415: 1022-4. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/11875568" target="_blank">link</a>]</li>
+<li>Stoletzki, N. and Eyre-Walker, A. (2011) Estimation of the Neutrality Index. Mol. Biol. Evol. 28: 63-70. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/20837603" target="_blank">link</a>]</li>
+<li>Tajima, F. (1989) Statistical method for testing the neutral mutation hypothesis by DNA polymorphism. Genetics 123: 585-595. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/2513255" target="_blank">link</a>]</li>
+<li>Tajima, F. (1993) Mesurement of DNA polymorphism. In: <i>Mechanisms of molecular evolution: introduction to molecular paleopopulation biology</i>, Takahata N. and Clark A. G. (Ed.). Sinauer Associates Inc., Suderland, MA.</li> 
+<li>Tajima, F. (1996) The amount of DNA polymorphism maintained in a finite population when the neutral mutation rate varies among sites. Genetics 143: 1457-1465. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/8807315" target="_blank">link</a>]</li> 
+<li>Voight,B.F., Kudaravalli,S., Wen,X. and Pritchard,J.K. (2006) A map of recent positive selection in the human genome. PLoS Biol, 4, e72. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/16494531" target="_blank">link</a>]</li> 
+<li>Wakeley, J. (1996). The Variance of Pairwise Nucleotide Differences in Two Populations with Migration. Theor. Popul. Biol. 49: 39-57. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/8813013" target="_blank">link</a>]</li> 
+<li>Wall, J.(1999). Recombination and the power of statistical tests of neutrality. Genet Res 74: 65-79[<a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0016672399003870" target="_blank">link</a>]</li> 
+<li>Watterson G. A. (1975) On the number of segregating sites in genetical models without recombination. Theor. Popul. Biol. 7: 256–276. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/1145509" target="_blank">link</a>]</li> 
+<li>Zeng,  K.,  Y.-X.  Fu,  S.  Shi,  and  C.-I.  Wu  (2006). Statistical  tests  for  detecting  positive  selection by utilizing high-frequency variants. Genetics 174: 1431-1439. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/16951063" target="_blank">link</a>]</li> 
+                        </ul></dd>
+                    </dl>
+                </div>
+        </body>
+</html>

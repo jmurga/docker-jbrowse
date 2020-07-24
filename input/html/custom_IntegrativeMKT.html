@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <!-- **************************************************************************** -->
+                <!-- SITE SETTINGS -->
+                <!-- **************************************************************************** -->
+
+                <!-- Page title -->
+                <title>Integrative MKT</title>
+
+                <!-- Site metadata -->
+                <meta charset='UTF-8'>
+
+                <!-- **************************************************************************** -->
+                <!-- STYLES -->
+                <!-- **************************************************************************** -->
+                <link rel="stylesheet" type="text/css" href="../../css/custom_main.css" />
+                <style>body {max-width: 1000px;}</style>
+
+        </head>
+        
+        <body>
+                <div class="classDiv_help_dialog">
+                    <div class="" style="text-align: justify";>
+<table style="width:100%;border:0px;padding:5px;border-collapse:collapse;text-align:left">
+  <tr>
+    <th width="58%">
+                         
+<p align="justify">McDonald and Kreitman tests (MKT, McDonald and Kreitman 1991) have been extensively used to detect the signature of natural selection at the molecular level. The MKT compares the amount of variation within a species to the divergence between species at two types of sites: putatively neutral sites (typically synonymous coding sites) are used as the reference to detect selection at the other type of site (typically nonsynonymous coding sites). The MKT can be generalized to any two types of sites provided that one of them is assumed to evolve neutrally and that both types of sites are closely linked in the genome (Fu and Li 1993, Andolfatto 2005). If mutations are either strongly deleterious (and thus do not segregate in the population) or neutral, <i>Psel/Pneu = Dsel/Dneu</i>, where <i>P</i> is the number of segregating polymorphisms and <i>D</i> is the number of divergent substitutions, and <i>sel</i> and <i>neu</i> denote putative selected and neutral sites, respectively. Significant departures from equality (tested with a Fisher Exact Test from a 2x2 contingency table) indicate the segregation of slightly deleterious polymorphisms (<i>Psel/Pneu > Dsel/Dneu</i>) or the selection for adaptive variants (<i>Dsel/Dneu > Psel/Pneu</i>). The fraction of adaptive fixations, &alpha;, is estimated from <i>1 - (Psel/Pneu)(Dneu/Dsel)</i> (Smith and Eyre-Walker 2002). &alpha; can be equivalently estimated using &pi; and <i>K</i> with the expression <i>1 - (&pi;sel/&pi;neu)(Kneu/Ksel)</i> (Sella <i>et al.</i> 2009). &alpha; ranges from -Inf to 1, values greater than 0 indicating the fraction of adaptive fixations. Direction of Selection (<i>DoS</i>) is a similar statistic that is defined as <i>Dsel/(Dsel + Dneu) - Psel/(Psel+Pneu)</i> and ranges from -1 to 1. <i>DoS</i> is positive when there is evidence of adaptive selection, zero if there is only neutral evolution, and negative when weakly deleterious mutations are segregating.</p>
+
+<p align="justify">Adaptive mutations and weakly deleterious selection act in opposite directions on the MKT, so both will be underestimated when the two selection regimes occur at the same time. Mackay <i>et al.</i> (2012) developed an integrative new framework for the MKT in which the fraction of sites undergoing different regimes of selection can be estimated. They separated <i>Psel</i> into the number of neutral variants (<i>Psel_neutral</i>) and the number of weakly deleterious variants (<i>Psel_weak</i>) by incorporating information of the Minor Allele Frequency (MAF) of the segregating sites and estimated the fractions listed in <b>Table 1</b>.</p>
+
+<p align="justify">The standard and integrative MKTs were applied to all annotated human coding regions in RefSeq. Each site in the coding gene region was assigned one of the following classes: 4-fold degenerate synonymous site, 0-fold nondegenerate nonsynonymous site, 5' UTR, 3' UTR, intron, and flanking intergenic region (+/-500bp regions flanking the gene). All annotated transcripts for any gene overlapping a coding region were taken into account in order to classify sites, following the order <i>Intergenic > 4-fold > intron > 3'UTR > 5'UTR > 0-fold</i>, so e.g. a site annotated as intronic according to the transcript being analyzed but 0-fold according to another transcript overlapping the region would be classified as 0-fold. Then, using 4-fold sites as neutral sites, independent MKTs were performed for the other classes of sites.</p>
+
+    </th>
+    <th width="2%">&nbsp;</th>
+    <th width="40%">
+<p align="justify"><b>Table 1. Integrative MKT (extracted from Mackay <i>et al.</i> 2012)</b></p>
+	<table class="classTable_data">
+                <thead>
+                    <tr>
+                        <td>Selective fraction</td>
+                        <td>Symbol</td>
+                        <td>Estimator</td>
+                        <td>Definition</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Strongly deleterious sites</td>
+                        <td><i>d</i></td>
+                        <td><i>d = 1 - (&gammad; + b) = 1 - (mneu·Psel / msel·Pneu)</i></td>
+                        <td>Fraction of new mutants which are strongly deleterious and therefore not segregating</td>
+                    </tr>
+                    <tr>
+                        <td>Weakly deleterious sites</td>
+                        <td><i>b</i></td>
+                        <td><i>b = (Psel_weak/Pneu) (mneu/msel)</i></td>
+                        <td>The excess of sites segregating with MAF less than 5% with respect to the neutral site class</td>
+                    </tr>
+                    <tr>
+                        <td>Neutral sites</td>  
+                        <td><i>&gammad;</i></td>
+                        <td><i>&gammad; = (mneu·Psel_neutral / msel·Pneu)</i></td>
+                        <td>The neutral fraction estimated from the neutral class after correcting for weakly deleterious sites</td>
+                    </tr>
+                    <tr>
+                        <td>Recently neutral sites</td>  
+                        <td><i>&upsih;</i></td>
+                        <td><i>&upsih; = [(Psel_neutral/Pneu) - (Dsel/Dneu)] (mneu/msel)</i></td>
+                        <td>Subset of &gammad;. The relative excess of polymorphism to divergence once the weakly deleterious fraction has been discounted</td>
+                    </tr>
+                    <tr>
+                        <td>Adaptive fixations</td>
+                        <td><i>&alpha;</i></td>
+                        <td><i>&alpha; = 1 - (Psel_neutral/Pneu) (Dneu/Dsel)</i></td>
+                        <td>Fraction of adaptive substitution estimated from the MKT table adjusted for the weakly deleterious fraction</td>
+                    </tr>
+                </tbody>
+        	</table>
+
+    </th>
+  </tr>
+</table>
+                    </div>
+                </div>
+                <br>
+                <div class="classDiv_help_dialog" style="text-align:justify;">
+                    <dl class="classDl_references" style="text-align: justify;">
+                        <dt>&nbsp;&nbsp;&nbsp;+ References</dt>
+                        <br>
+                        <dd><ul>
+<li>Andolfatto, P. (2005) Adaptive evolution of non-coding DNA in Drosophila. Nature 437, 1149-1152. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/16237443" target="_blank">link</a>]</li>
+<li>Fu, Y. X. and Li, W. H. (1993) Statistical tests of neutrality of mutations. Genetics 133, 693-709. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/8454210" target="_blank">link</a>]</li>
+<li>Mackay, T. F. <i>et al</i>. (2012) The Drosophila melanogaster Genetic Reference Panel. Nature 482: 173-8. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/22318601" target="_blank">link</a>]</li>
+<li>McDonald, J. H. and Kreitman, M. (1991) Adaptive protein evolution at the Adh locus in Drosophila. Nature 351: 652-654. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/1904993" target="_blank">link</a>]</li>
+<li>Sella, G., Petrov, D. A., Przeworski, M. and Andolfatto, P. (2009) Pervasive natural selection in the Drosophila genome? PLoS Genet. 5, e1000495. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/19503600" target="_blank">link</a>]</li>
+<li>Smith, N. G. and Eyre-Walker, A. (2002) Adaptive protein evolution in Drosophila. Nature 415: 1022-4. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/11875568" target="_blank">link</a>]</li>
+			</ul></dd>
+                    </dl>
+                </div>
+        </body>
+</html>

@@ -1,0 +1,114 @@
+/* PopFly: Q&A CSS */
+
+html, body {
+    height: 100%;
+    width: 95%;
+    padding: 4px;
+    border: 0;
+    font-size: 14px;
+    margin-left: 0.5cm;
+    font-family: Univers,Trebuchet MS,Helvetica,Arial,sans-serif;
+}
+
+div.classDiv_content {
+    display:table-row;
+    min-width: 800px;
+} p.classP_justified {
+    text-align: justify;
+    line-height: 140%;
+} p.classP_justified2 {
+    text-align: justify;
+    line-height: 140%;
+    margin-left: 1cm;
+} p.classP_step {
+    text-align: justify;
+    line-height: 140%;
+    margin-left: 2cm;
+} p.classP_footer {
+    text-align: center;
+    line-height: 100%;
+    width: 50%;
+    margin: auto;
+} div.classDiv_img {
+    width: 100%;
+    text-align: center;
+    line-height: 200%;
+} div.classDiv_img img {
+    border: 1px solid black;
+} div.classDiv_step {
+    width: 90%;
+    border: 1px solid black;
+    text-align: justify;
+    background-color: #f4e6bc;
+    margin-left:2cm;
+    padding-right:2em;
+} ol { 
+    margin-left: 2cm; 
+} a {
+        color: #ee8400;
+}
+
+
+table.classTable_data{
+        margin:0px;
+        margin-left:2em;
+        width:95%;
+        border-collapse: collapse;
+        vertical-align: middle;
+        text-align: center;
+    } table.classTable_data table{
+        border-spacing:0px;   
+    } table.classTable_data thead tr td{
+        vertical-align: middle;
+        text-align: center;
+        background-color: #f5f5f9;
+        border: 1px solid #cccccc;
+        font-size: 1.02em;
+        font-weight: bolder;
+        color: #000000;
+    } table.classTable_data tbody tr:hover td{
+        background-color:#f5f5f9;
+    } table.classTable_data td{
+        vertical-align:middle;
+        text-align:center;
+        background-color:#ffffff;
+        border: 1px solid #cccccc;
+        padding:0.08em;
+        font-size: 1em;
+        font-weight:normal;
+        color:#000000;
+    } table.classTable_data tfoot{
+        display: table-footer-group;
+        vertical-align: middle;
+        font-size: 0.95em;
+    } table.classTable_data tfoot tr td{
+        border: 0px;
+        text-align: left;
+    }
+
+/* This is the pretty way to display a tooltip, instead of 'title' */
+    span.tooltip_link {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+    span.tooltip_link span.classic_tt {
+        border-radius: 5px 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: 1px solid #FFAD33;
+        background: #FFFFAA;
+        position: absolute;
+        padding: 0.7em 0.7em;
+        margin-left: 0;
+        left: 1em;
+        top: 2em;
+        width: 250px;
+        font-size: 0.9em;
+        z-index: 2147483647;
+        opacity: 0.95;
+        visibility: hidden;
+    }
+    span.tooltip_link:hover span.classic_tt {
+        visibility: visible;
+    }

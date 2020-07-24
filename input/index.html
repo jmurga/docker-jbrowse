@@ -1,259 +1,271 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>JBrowse</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JBrowse</title>
 
-		<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-		<link rel="manifest" href="site.webmanifest">
-		<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#2d89ef">
-		<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
 
-		<script type="text/javascript">
-			window.onerror=function(msg){
-				if( document.body )
-					document.body.setAttribute("JSError",msg);
+    <script type="text/javascript">
+        window.onerror=function(msg){
+            if( document.body )
+                document.body.setAttribute("JSError",msg);
+        }
+        if(window.process&&process.versions&&process.versions.electron) {
+            window.electronRequire = require;
+            delete window.require;
+        }
+	</script>
+	
+    <style>
+        html, body, div.jbrowse {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+	</style>
+	<style>
+		/* Image size */
+			img.classImg_centered {
+					width: 550px;
+					height: auto;
 			}
-			if(window.process&&process.versions&&process.versions.electron) {
-				window.electronRequire = require;
-				delete window.require;
+	
+	/* Inputs and Labels */
+			label.classLabel_checkbox {
+				display: block;
+				padding-left: 15px;
+				text-indent: -15px;
 			}
-		</script>
-		<style>
-			html, body, div.jbrowse {
-				margin: 0;
+			input.classInput_checkbox {
+					width: 13px;
+				height: 13px;
 				padding: 0;
-				height: 100%;
-				width: 100%;
+				margin: 0;
+				vertical-align: middle;
+				position: relative;
+				top: -1px;
+				overflow: hidden;
 			}
-		</style>
-		<style>
-			/* Image size */
-				img.classImg_centered {
-						width: 550px;
-						height: auto;
-				}
-		
-		/* Inputs and Labels */
-				label.classLabel_checkbox {
-					display: block;
-					padding-left: 15px;
-					text-indent: -15px;
-				}
-				input.classInput_checkbox {
-						width: 13px;
-					height: 13px;
+	
+	/* The Modal (background) */
+			.modal {
+				display: none; /* Hidden by default */
+				position: fixed; /* Stay in place */
+				z-index: 2001; /* Sit on top */
+				padding-top: 100px; /* Location of the box */
+				left: 0;
+				top: 0;
+				width: 100%; /* Full width */
+				height: 100%; /* Full height */
+				overflow: auto; /* Enable scroll if needed */
+				background-color: rgb(0,0,0); /* Fallback color */
+				background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+			} a {
+			color: #396494;
+		}
+	
+	/* Modal Content */
+			.modal-content {
+				position: relative;
+				background-color: #fefefe;
+				margin: auto;
+				padding: 0;
+				border: 1px solid #888;
+				width: 80%;
+				min-width: 570px;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+				-webkit-animation-name: animatetop;
+				-webkit-animation-duration: 0.4s;
+				animation-name: animatetop;
+				animation-duration: 0.4s;
+			}
+	
+	/* Video Responsive Size */
+			.classDiv_vidHelper {
+					position: relative;
+					width: 55%;
+					height: 0;
+			padding-bottom: 30%;
+			margin:0 auto;
+			}
+			.classIframe_introVid {
+					position: absolute;
+					top: 0;
+			left: 0;
+					width: 100%;
+			height: 100%;
+			margin:0 auto;
+			}
+	
+	/* Add Animation to the Modal */
+			@-webkit-keyframes animatetop {
+				from {top:-300px; opacity:0} 
+				to {top:0; opacity:1}
+			}
+	
+			@keyframes animatetop {
+				from {top:-300px; opacity:0}
+				to {top:0; opacity:1}
+			}
+	
+	/* The Close Button */
+			.close {
+				color: white;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+			}
+	
+			.close:hover,
+			.close:focus {
+				color: #000;
+				text-decoration: none;
+				cursor: pointer;
+			}
+	
+			.modal-header {
+				padding: 2px 16px;
+				background-color: #396494;
+				color: white;
+			}
+	
+			.modal-body {
+					padding: 6px 16px;
+					text-align: center;
+			}
+	
+			.modal-footer {
+				padding: 2px 16px;
+				background-color: #396494;
+				color: #ffffff;
+				text-align: right;
+			}
+			p.classP_title1 {
+					font-size: 20pt;
+					font-weight: bold;
 					padding: 0;
 					margin: 0;
-					vertical-align: middle;
-					position: relative;
-					top: -1px;
-					overflow: hidden;
-				}
-		
-		/* The Modal (background) */
-				.modal {
-					display: none; /* Hidden by default */
-					position: fixed; /* Stay in place */
-					z-index: 2001; /* Sit on top */
-					padding-top: 100px; /* Location of the box */
-					left: 0;
-					top: 0;
-					width: 100%; /* Full width */
-					height: 100%; /* Full height */
-					overflow: auto; /* Enable scroll if needed */
-					background-color: rgb(0,0,0); /* Fallback color */
-					background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-				} a {
-				color: #396494;
 			}
-		
-		/* Modal Content */
-				.modal-content {
-					position: relative;
-					background-color: #fefefe;
-					margin: auto;
-					padding: 0;
-					border: 1px solid #888;
-					width: 80%;
-					min-width: 570px;
-					box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-					-webkit-animation-name: animatetop;
-					-webkit-animation-duration: 0.4s;
-					animation-name: animatetop;
-					animation-duration: 0.4s;
-				}
-		
-		/* Video Responsive Size */
-				.classDiv_vidHelper {
-						position: relative;
-						width: 55%;
-						height: 0;
-				padding-bottom: 30%;
-				margin:0 auto;
-				}
-				.classIframe_introVid {
-						position: absolute;
-						top: 0;
-				left: 0;
-						width: 100%;
-				height: 100%;
-				margin:0 auto;
-				}
-		
-		/* Add Animation to the Modal */
-				@-webkit-keyframes animatetop {
-					from {top:-300px; opacity:0} 
-					to {top:0; opacity:1}
-				}
-		
-				@keyframes animatetop {
-					from {top:-300px; opacity:0}
-					to {top:0; opacity:1}
-				}
-		
-		/* The Close Button */
-				.close {
-					color: white;
-					float: right;
-					font-size: 28px;
-					font-weight: bold;
-				}
-		
-				.close:hover,
-				.close:focus {
-					color: #000;
-					text-decoration: none;
-					cursor: pointer;
-				}
-		
-				.modal-header {
-					padding: 2px 16px;
-					background-color: #396494;
-					color: white;
-				}
-		
-				.modal-body {
-						padding: 6px 16px;
-						text-align: center;
-				}
-		
-				.modal-footer {
-					padding: 2px 16px;
-					background-color: #396494;
-					color: #5FA5F5;
-					text-align: right;
-				}
-				p.classP_title1 {
-						font-size: 20pt;
-						font-weight: bold;
-						padding: 0;
-						margin: 0;
-				}
-		
-		
-				/* Cookies Modal */
-				.modal_cookies {
-						width: 30%;
-					min-width: 50px;
-		
-						display: none; /* Hidden by default */
-					position: fixed; /* Stay in place */
-					z-index: 2002; /* Sit on top */
-					
-					right: 40px;
-					bottom: 20px;
-				}
-		
-		/* Cookies Modal Content */
-				.modal-content_cookies {
-					position: relative;
-					
-					border: 2px solid #396494;
-					background-color: #fefefe;
-					border-radius: 10px;
-					padding: 0 10px;
-						width: 100%;
-		
-					color: #332100;
-		
-					-webkit-animation-name: animateright;
-					-webkit-animation-duration: 0.4s;
-					animation-name: animateright;
-					animation-duration: 0.4s;       
-				}
-		
-		/* Add Animation to the Cookies Modal */
-				@-webkit-keyframes animateright {
-					from {right:-200px; opacity:0} 
-					to {right:40px; opacity:1}
-				}
-		
-				@keyframes animateright {
-					from {right:-200px; opacity:0}
-					to {right:40px; opacity:1}
-				}
-		
-		/* Got It! Button */
-				.modal-footer_cookies {
-					background-color: #396494;
-					color: #EDEDED;
-					font-size: 16px;
-					font-weight: bold;
-					text-align: center;
-					width: 80%;
-					height: 40px;
-					line-height: 40px;
-					border-radius: 5px;
-					margin: auto;
-					padding: 0;
-				}
-				.modal-footer_cookies:hover,
-				.modal-footer_cookies:focus {
-					background-color: #5FA5F5;
-					color: white;
-					text-decoration: none;
-					cursor: pointer;
-				}
-		</style>
+	
+	
+			/* Cookies Modal */
+			.modal_cookies {
+					width: 30%;
+				min-width: 50px;
+	
+					display: none; /* Hidden by default */
+				position: fixed; /* Stay in place */
+				z-index: 2002; /* Sit on top */
+				
+				right: 40px;
+				bottom: 20px;
+			}
+	
+	/* Cookies Modal Content */
+			.modal-content_cookies {
+				position: relative;
+				
+				border: 2px solid #396494;
+				background-color: #fefefe;
+				border-radius: 10px;
+				padding: 0 10px;
+					width: 100%;
+	
+				color: #332100;
+	
+				-webkit-animation-name: animateright;
+				-webkit-animation-duration: 0.4s;
+				animation-name: animateright;
+				animation-duration: 0.4s;       
+			}
+	
+	/* Add Animation to the Cookies Modal */
+			@-webkit-keyframes animateright {
+				from {right:-200px; opacity:0} 
+				to {right:40px; opacity:1}
+			}
+	
+			@keyframes animateright {
+				from {right:-200px; opacity:0}
+				to {right:40px; opacity:1}
+			}
+	
+	/* Got It! Button */
+			.modal-footer_cookies {
+				background-color: #396494;
+				color: #EDEDED;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				width: 80%;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 5px;
+				margin: auto;
+				padding: 0;
+			}
+			.modal-footer_cookies:hover,
+			.modal-footer_cookies:focus {
+				background-color: #ffffff;
+				color: white;
+				text-decoration: none;
+				cursor: pointer;
+			}
+	</style>
+	
+	<script type="text/javascript" src="dist/main.bundle.js" charset="utf-8"></script>
+			<!-- Custom SCRIPTS -->
+	<script type="text/javascript">
+		// Global variable: video link
+		// var videoLink = 'https://www.youtube.com/embed/aQS66Jwo-u0';
 
-		<script type="text/javascript" src="dist/main.bundle.js" charset="utf-8"></script>
-		<!-- Custom SCRIPTS -->
-		<script type="text/javascript">
-			// Global variable: video link
-			// var videoLink = 'https://www.youtube.com/embed/aQS66Jwo-u0';
+		function modalBox() {
 
-			function modalBox() {
+			//SCRIPT FOR THE POPUP
 
-				//SCRIPT FOR THE POPUP
+			// Get the modal
+			var modal = document.getElementById('myModal');
 
-				// Get the modal
-				var modal = document.getElementById('myModal');
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn");
 
-				// Get the button that opens the modal
-				var btn = document.getElementById("myBtn");
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
 
-				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName("close")[0];
+			// When the user clicks the button, open the modal 
+			if (localStorage.getItem('alerted') != 'yes') {
+				modal.style.display = "block";
+				//document.getElementById('introVid').src = videoLink;
+			}
 
-				// When the user clicks the button, open the modal 
-				if (localStorage.getItem('alerted') != 'yes') {
-					modal.style.display = "block";
-					//document.getElementById('introVid').src = videoLink;
+			// When the user clicks the button, open the modal 
+			if (localStorage.getItem('alerted') != 'yes') {
+				modal.style.display = "block";
+				//document.getElementById('introVid').src = videoLink;
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+				if (document.getElementById("hideDialog").checked) {
+					localStorage.setItem('alerted','yes');
+				} else {
+					localStorage.setItem('alerted','no');
 				}
+				modal.style.display = "none";
+				//document.getElementById('introVid').src = '';
+			}
 
-				// When the user clicks the button, open the modal 
-				if (localStorage.getItem('alerted') != 'yes') {
-					modal.style.display = "block";
-					//document.getElementById('introVid').src = videoLink;
-				}
-
-				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
 					if (document.getElementById("hideDialog").checked) {
 						localStorage.setItem('alerted','yes');
 					} else {
@@ -262,41 +274,30 @@
 					modal.style.display = "none";
 					//document.getElementById('introVid').src = '';
 				}
-
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-					if (event.target == modal) {
-						if (document.getElementById("hideDialog").checked) {
-							localStorage.setItem('alerted','yes');
-						} else {
-							localStorage.setItem('alerted','no');
-						}
-						modal.style.display = "none";
-						//document.getElementById('introVid').src = '';
-					}
-				}
 			}
+		}
 
-			function cookies_modalBox() {
-				// SCRIPT FOR THE COOKIES MESSAGE
+		function cookies_modalBox() {
+			// SCRIPT FOR THE COOKIES MESSAGE
 
-				// Get the modal
-				var modal_cookies = document.getElementById('myModal_cookies');
-				// Display the cookies message
-				if (localStorage.getItem('cookies_alerted') != 'yes') {
-					modal_cookies.style.display = "block";
-				}
-				// Get the "Got it!" button
-				var okbtn = document.getElementById("GotIt_btn");
-				// Set the cookie to avoid display it again
-				okbtn.onclick = function() {
-					localStorage.setItem('cookies_alerted','yes');
-					modal_cookies.style.display = "none";
-				}
+			// Get the modal
+			var modal_cookies = document.getElementById('myModal_cookies');
+			// Display the cookies message
+			if (localStorage.getItem('cookies_alerted') != 'yes') {
+				modal_cookies.style.display = "block";
 			}
-		</script>
-	</head>
+			// Get the "Got it!" button
+			var okbtn = document.getElementById("GotIt_btn");
+			// Set the cookie to avoid display it again
+			okbtn.onclick = function() {
+				localStorage.setItem('cookies_alerted','yes');
+				modal_cookies.style.display = "none";
+			}
+		}
+	</script>
+  </head>
 
+  <body>
 	<body onload="modalBox();cookies_modalBox();">
 		<!-- 201606 Custom INTRO PAGE -->
 		<!-- The Modal -->
@@ -348,6 +349,6 @@
 		</div>
 		<!-- 201606 Custom COOKIES MESSAGE -->
 		<div id="GenomeBrowser" style="height: 100%; width: 100%; padding: 0; border: 0;"></div>
-		<div style="display: none">DEST-JBrowse</div>
-	</body>
+    <div style="display: none">JBrowseDefaultMainPage</div>
+  </body>
 </html>

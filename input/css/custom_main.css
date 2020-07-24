@@ -1,0 +1,134 @@
+/*
+ * PopFly specific CSS settings
+
+* Palette A:
+ * #16253d midnight blue
+ * #002c54 dusk
+ * #8087ff golden
+ * #6374AB bronze
+ 
+* Palette B:
+ * #505160 thunder cloud
+ * #68829e waterfall
+ * #aebd38 moss
+ * #F29100 meadow
+*/
+
+/* 201606 styles for the header */
+    div.classDiv_header {
+        background: -webkit-linear-gradient(#4777aa,#396494,#396494);
+        background: -moz-linear-gradient(#4777aa,#396494,#396494);
+        background: -o-linear-gradient(#4777aa,#396494,#396494);
+        background: linear-gradient(#4777aa,#396494,#396494);
+        background-size: auto 190%;
+        background-position: 0 0;
+        
+        /* If we want to add a transition when hover */
+        /*
+        -webkit-transition: background-position 0.5s ease-out;
+        -moz-transition: background-position 0.5s ease-out;
+        -o-transition: background-position 0.5s ease-out;
+        transition: background-position 0.5s ease-out;
+        */
+        
+        height: 60px;
+        padding: 0;
+        text-align: left;
+        position: static;
+
+    } div.classDiv_header:hover {
+        /* If we want to add a transition when hover */
+        /* background-position: 0 100%; */
+
+    } div.classDiv_logo {
+        height: 100%;
+    } span.classSpan_helper {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    } img.classImg_logo {
+        height: 98%;
+        width: auto;
+        vertical-align: middle;
+        padding: 0 6px;
+    }
+
+/* 201606 styles for the custom dialogs: general */
+    div.classDiv_help_dialog {
+        display:table-row;
+    } div.classDiv_help_dialog ul {
+        padding-left: 0;
+    } div.classDiv_help_dialog div.mainData {
+        text-align: left;
+        width:95%;
+        margin: 0 auto 1em auto;
+    } div.classDiv_help_dialog div.mainTracks {
+        text-align: left;
+    } div.classDiv_help_dialog div.mainTracks > dl {
+        width: 95%;
+        margin: 0 auto 1em auto;
+    } div.classDiv_help_dialog dt {
+        font-weight: bold;
+        margin-top: 1em;
+    } div.classDiv_help_dialog dd {
+        margin-left: 2em;
+    } div.classDiv_img {
+        width: 100%;
+        text-align: center;
+    } div.classDiv_help_dialog sup, sub {
+        font-size: 0.6em;
+    } div.classDiv_help_dialog dl.classDl_references dd {
+        font-size: 0.85em;
+        list-style-type: none;
+        margin-left: 1.5cm;
+    } div.classDiv_help_dialog a {
+	color: #396494;
+    }
+
+/* 201606 styles for the custom dialogs: data description */
+    table.classTable_data{
+        margin:0px;
+/*        padding:0px;*/
+        margin-left:2em;
+        width:95%;
+        border-collapse: collapse;
+        vertical-align: middle;
+        text-align: center;
+        } table.classTable_data table{
+            border-spacing:0px;   
+        } table.classTable_data thead tr td{
+            vertical-align: middle;
+            text-align: center;
+            background-color: #f5f5f9;
+            border: 1px solid #cccccc;
+            font-size: 1.02em;
+            font-weight: bolder;
+            color: #000000;
+        } table.classTable_data tbody tr:hover td{
+            background-color:#f5f5f9;
+        } table.classTable_data td{
+            vertical-align:middle;
+            text-align:center;
+            background-color:#ffffff;
+            border: 1px solid #cccccc;
+            padding:0.08em;
+            font-size: 1em;
+            font-weight:normal;
+            color:#000000;
+        } table.classTable_data tfoot{
+            display: table-footer-group;
+            vertical-align: middle;
+            font-size: 0.95em;
+        } 
+        table.classTable_data tfoot tr td{
+            border: 0px;
+            text-align: left;
+        }
+
+/* 201606 styles for the custom dialogs: refs. links */
+    div.classDiv_help_dialog div.mainTracks dl a{
+        color: inherit;
+        text-decoration: none;
+    }div.classDiv_help_dialog div.mainTracks dl a:hover{
+        background: #e5e5e5;
+    }

@@ -10,6 +10,7 @@ then
     done
 fi
 
-mkdir -p $JBROWSE_DATA/json/
+mkdir -p ${JBROWSE_DATA}/json/
 
-nginx -g "daemon off;"
+apachectl start
+# nginx -g "daemon off;"
