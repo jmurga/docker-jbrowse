@@ -816,6 +816,24 @@ initView: function() {
                 className: 'about-dialog'
             });
 
+        // Parse URL to get location
+        //var initLocation = window.location.href.match(/loc=([^&]*)/).replace('%3A', '..').split('..');
+        //var initLocation = window.location.href.match(/loc=([^&]*)/).replace('%3A', '..').split('..');
+        //var download = this.downloadPool();
+/*        var aboutDownloadDialog = new InfoDialog(
+            {
+                id: 'menubar_downloadwig',
+                label: 'Download full tracks',
+                iconClass: 'dijitIconFolder',
+                onClick: function(){
+                    new InfoDialog({
+                        title: 'Download pool-seq'
+                        content: 'here',
+                        className: 'about-dialog'
+                    });
+                }
+        });*/
+
         var tutorial = this.tutorial();
         var tutorialDialog = new InfoDialog(
             {
@@ -1087,36 +1105,62 @@ initView: function() {
             new HelpDialog( lang.mixin(thisObj.config.quickHelp || {}, { browser: thisObj } )).show();
         }
 
+            
         // *************************************
         // Custom Tools *************************************
+        this._addDownloadPoolRegion = new dijitMenuItem(
+                    {
+                        id: 'menubar_download_pool_region',
+                        label: 'Download region data',
+                        iconClass: 'dijitIconFolderClosed',
+                        onClick: function(){
+                            var initLocation = window.location.href.match(/loc=([^&]*)/)[1];
+                            window.open('bin/downloadPool.php?genomicLoc=region&value=' + initLocation,'_blank','');
+                        }
+                    }
+        );
 
-        // this._addDownloadFasta = new dijitMenuItem(
-        //             {
-        //                 id: 'menubar_download_fasta',
-        //                 label: 'Download sequences',
-        //                 title: 'Download sequences',
-        //                 iconClass: 'dijitDownFasta',
-        //                 disabled: true,
-        //                 onClick: function() {
-        //                     dojo.byId("fasta-btn").click();
-        //                 }
-        //             }
-        // );
+        this.addGlobalMenuItem( 'tools', this._addDownloadPoolRegion );
 
-        // this.addGlobalMenuItem( 'resources', this._addDownloadFasta );
+
+        this._addDownloadPoolGenomic = new dijitMenuItem(
+                    {
+                        id: 'menubar_download_pool',
+                        label: 'Download scaffold',
+                        iconClass: 'dijitIconFolderClosed',
+                        onClick: function(){
+                            var initLocation = window.location.href.match(/loc=([^&]*)/)[1];
+                            window.open('bin/downloadPool.php?genomicLoc=genomic&value=' + initLocation,'_blank','');
+                        }
+                    }
+        );
+
+        this.addGlobalMenuItem( 'tools', this._addDownloadPoolGenomic );
 
         this._addDownloadWig = new dijitMenuItem(
                     {
                         id: 'menubar_downloadwig',
                         label: 'Download full tracks',
+                        iconClass: 'dijitIconFolderOpen',
+                        onClick: function(){
+                            window.open('files/index.php','_blank','');
+                        }
+            }
+        );
+
+        /*this._addDownloadRegion = new dijitMenuItem(
+                    {
+                        id: 'menubar_download_region',
+                        label: 'Download sequences',
                         iconClass: 'dijitIconFolderClosed',
                         onClick: function(){
                             window.open('files/index.php','_blank','');
                         }
                     }
                 );
+        */
         this.addGlobalMenuItem( 'tools', this._addDownloadWig );
-
+        //this.addGlobalMenuItem( 'tools', this._addDownloadRegion );
         this.renderGlobalMenu( 'tools', {text: 'Tools'}, menuBar );
 
         // *************************************
@@ -1709,8 +1753,9 @@ readHTML: function(ruta) {
 
     var contingut = '';
 
-    require(["dojo/request/xhr"], function(xhr) {
-        xhr.get(ruta, {                                                     // Read system file
+    define(["dojo/request/xhr"], function(xhr) {
+        xhr.get(ruta, {                                                     // Read system filenode_modules/dojo/request/xhr.js
+
             sync:true,
             handleAs: "text",
             headers: { "Content-Type": "text/plain" }
@@ -1723,7 +1768,7 @@ readHTML: function(ruta) {
                 contingut = contingut.match(/<body>(.*)<\/body>/).pop();    // Take only the body content
             },
             function(error) {                                               // Not found
-                contingut = '';
+                contingut = 'not found ruta';
             }
         );
     });
@@ -1736,7 +1781,7 @@ Data: function() {
     custom_DataDescription.title = custom_DataDescription.title || 'Data Description';
     
     // Read the content from an HTML file (more confortable to edit)
-    var html_file = "html/custom_DataDescription.html";
+    var html_file = "./html/custom_DataDescription.html";
     custom_DataDescription.description = this.readHTML(html_file);
 
     return custom_DataDescription;
@@ -1750,7 +1795,7 @@ Dest: function() {
         ? this.version : '(development version)';
     
     // Read the content from an HTML file (more confortable to edit)
-    var html_file = "html/custom_AboutDest.html";
+    var html_file = "./html/custom_AboutDest.html";
     aboutDest.description = this.readHTML(html_file);
 
     return aboutDest;
@@ -1764,10 +1809,29 @@ tutorial: function() {
         ? this.version : '(development version)';
     
     // Read the content from an HTML file (more confortable to edit)
-    var html_file = "html/custom_QA.html";
+    var html_file = "./html/custom_QA.html";
     tutorial.description = this.readHTML(html_file);
 
     return tutorial;
+},
+
+downloadPool: function() {
+
+    var download = {};
+    download.title = 'Download pool-seq';
+    //connect events to update the URL in the location bar
+
+    //var initLocation = window.location.href.match(/loc=([^&]*)/)[1].replace('%3A', '..').split('..');
+    //var initLocation = this.makeShareLink();
+    var initLocation = this.browser.locationBox.get('value')
+    console.log('*****************');
+    console.log(typeof initLocation);
+    console.log(initLocation);
+    console.log('*****************');
+    
+    //download.description = '<html><head><title>Downlaod pool-seq data</title></head><body><form action="bin/downloadPool.php" method="post"><p>Coordinates:<input type="text" id="coordinates" name="coordinates" value="' + initLocation[0] + ':' + initLocation[1] + '-' + initLocation[2] + '"></p><br><button style="text-align:center;" type="submit">Download here your files</button></form></body></html>';
+    download.description = initLocation;
+    return download;
 },
 
 Differentiation: function() {
@@ -1863,8 +1927,6 @@ getTrackTypes: function() {
 
     return this._knownTrackTypes;
 },
-
-
 
 openFileDialog: function() {
     this.fileDialog
@@ -3053,6 +3115,7 @@ globalKeyHandler: function( evt ) {
         evt.stopPropagation();
     }
 },
+
 makeSnapLink: function () {
     var browser = this;
     var shareURL = '#';
@@ -3145,6 +3208,7 @@ makeShareLink: function () {
     var updateShareURL = function() {
         shareURL = browser.makeCurrentViewURL();
     };
+
     dojo.connect( this, "onCoarseMove",                     updateShareURL );
     this.subscribe( '/jbrowse/v1/n/tracks/visibleChanged',  updateShareURL );
     this.subscribe( '/jbrowse/v1/n/globalHighlightChanged', updateShareURL );
@@ -3200,6 +3264,28 @@ makeFullViewLink: function () {
         target: '_blank',
         title: 'View in full-screen browser',
         innerHTML: 'Full-screen view'
+    });
+
+    var makeURL = this.config.makeFullViewURL || this.makeCurrentViewURL;
+
+    // update it when the view is moved or tracks are changed
+    var update_link = function() {
+        link.href = makeURL.call( thisB, thisB );
+    };
+    dojo.connect( this, "onCoarseMove",                     update_link );
+    this.subscribe( '/jbrowse/v1/n/tracks/visibleChanged',  update_link );
+    this.subscribe( '/jbrowse/v1/n/globalHighlightChanged', update_link );
+
+    return link;
+},
+
+
+makeLink: function () {
+    var thisB = this;
+    // make the link
+    var link = dojo.create('a', {
+        className: 'topLink',
+        href: window.location.href,
     });
 
     var makeURL = this.config.makeFullViewURL || this.makeCurrentViewURL;
@@ -3472,7 +3558,7 @@ createNavBox: function( parent ) {
     // set in the config, then put in a dropdown box for selecting
     // reference sequences
     var refSeqSelectBoxPlaceHolder = dojo.create('span', {id:'search-refseq'}, searchbox );
-
+    //console.log(refSeqSelectBoxPlaceHolder);
     // make the location search box
     this.locationBox = new dijitComboBox({
         id: "location",
@@ -3732,6 +3818,7 @@ showRegionAfterSearch: function( location ) {
     }
     this.showRegion( location );
 },
+
 showRegionWithHighlight: function() { // backcompat
     return this.showRegionAfterSearch.apply( this, arguments );
 },

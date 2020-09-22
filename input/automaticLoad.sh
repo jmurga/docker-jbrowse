@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # set -e 
-############### INCLUDE NEW CSS ON GENOME.SCSS
 ORGANISM="dm6"
 RAWDATA="dmel"
 
@@ -25,7 +24,7 @@ if [ ! -e ${JBROWSE_DATA}/${ORGANISM}/raw/dmel ]; then
     ln -s ${DATA_DIR}/${RAWDATA}/ ${JBROWSE}/files;
 fi;
 ln -sf ${DATA_DIR}/dmel.json ${JBROWSE_DATA}/${ORGANISM}/raw/;
-rm ${JBROWSE}/index.html && ln -s ${DATA_DIR}/index.html ${JBROWSE}/;
+# rm ${JBROWSE}/index.html && ln -s ${DATA_DIR}/index.html ${JBROWSE}/;
 
 ###############################################
 ###############  LOAD SEQ/ANNOTATIONS   ################
@@ -105,13 +104,13 @@ do
         SUBCAT="Variation/Recombination"
         COLLAPSETRACKS="${COLLAPSETRACKS}${SUBCAT},"
         TRACKCOLOR=${COLORS[recomb]}
-        LABEL="HR recomb cM/Mb (Comeron et al)"
+        LABEL="HR recomb cM/Mb (Comeron et al.)"
         DEFAULTTRACKS="${DEFAULTTRACKS}${LABEL},"
     elif [[ ${TRACK} =~ 'RRC' ]];then
         SUBCAT="Variation/Recombination"
         COLLAPSETRACKS="${COLLAPSETRACKS}${SUBCAT},"
         TRACKCOLOR=${COLORS[RCC]}
-        LABEL="RRC cM/Mb (Fiston-Lavier et al) 100kb"
+        LABEL="RRC cM/Mb (Fiston-Lavier et al.) 100kb"
         DEFAULTTRACKS="${DEFAULTTRACKS}${LABEL},"
     else
         SUBCAT="ref_tracks"
@@ -136,9 +135,6 @@ done
 ${JBIN}/add-json.pl '{ "dataset_id": "dmel", "include": [ "functions.conf" ] }' ${JBROWSE_DATA}/${ORGANISM}/trackList.json
 cp ${DATA_DIR}/functions.conf ${JBROWSE_DATA}/${ORGANISM}/functions.conf
 
-
-mv ${JBROWSE}/jbrowse.conf ${JBROWSE}/old.conf
-
 printf "\n[general]\ndataset_id = ${ORGANISM}\n" > ${JBROWSE_DATA}/${ORGANISM}/tracks.conf
 
 printf "\n[GENERAL]\ndataRoot = data/${ORGANISM}\ninclude = {dataRoot}/trackList.json\ninclude += {dataRoot}/tracks.conf\n" >> ${JBROWSE}/jbrowse.conf
@@ -151,7 +147,6 @@ printf ${COLLAPSETRACKS} >> ${JBROWSE}/jbrowse.conf
 
 printf "\n[datasets.${ORGANISM}]\nurl  = ?data=data/${ORGANISM}\nname = ${ORGANISM}\n" >> ${JBROWSE}/jbrowse.conf
 
-
 ###########PLUGINS
 printf "\n[ plugins.HierarchicalCheckboxPlugin ]\nlocation = plugins/HierarchicalCheckboxPlugin\n" >> ${JBROWSE}/jbrowse.conf
 
@@ -162,14 +157,28 @@ printf "\n[ plugins.bookmarks ]\nlocation = plugins/bookmarks\n" >> ${JBROWSE}/j
 
 ${JBIN}/generate-names.pl --safeMode -v --out ${JBROWSE_DATA}/${ORGANISM};
 
-
 ###############################################
 ###############  APACHE  CONF  ################
 ###############################################
 
-sed -i 's/html/html\/dest/g' /etc/apache2/sites-available/000-default.conf
-printf "<Directory /var/www/html/seltab>\n\tOptions -Indexes\n\tAllowOverride All\n\t# Compress text, HTML, JavaScript, CSS, XML:\n\t\t<FilesMatch \"\.(htm?l|txt|css|js|php|pl)$\">\n\t\t\tSetOutputFilter DEFLATE\n\t</FilesMatch>\n</Directory>\n" >> /etc/apache2/sites-available/000-default.conf
+sed -i 's/html/html\/dest\//g' /etc/apache2/sites-available/000-default.conf
 
-# nginx -g "daemon off;"
-# httpd-foreground
-# apachectl start
+printf "<Directory /var/www/html/dest>\n\tOptions -Indexes\n\tAllowOverride All\n\t# Compress text, HTML, JavaScript, CSS, XML:\n\t\t<FilesMatch \"\.(htm?l|txt|css|js|php|pl)$\">\n\t\t\tSetOutputFilter DEFLATE\n\t</FilesMatch>\n</Directory>\n" >> /etc/apache2/sites-available/000-default.conf
+
+###############################################
+###############   NEW  BUILD   ################
+###############################################
+
+############### LOAD NEW CSS ON GENOME.SCSS
+
+ln -s /data/css/* ${JBROWSE}/css/
+ln -s /data/img/* ${JBROWSE}/img/
+ln -s /data/html/ ${JBROWSE}/html
+
+mv ${JBROWSE}/src/JBrowse/Browser.js ${JBROWSE}/src/JBrowse/old.js
+ln -s /data/Browser.js ${JBROWSE}/src/JBrowse
+ln -s /data/downloadPool.php ${JBROWSE}/bin/
+
+ln -s /data/minimalSetup.sh ${JBROWSE}/
+cd ${JBROWSE} && bash minimalSetup.sh
+apachectl start
