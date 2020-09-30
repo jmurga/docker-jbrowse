@@ -24,7 +24,7 @@ if [ ! -e ${JBROWSE_DATA}/${ORGANISM}/raw/dmel ]; then
     ln -s ${DATA_DIR}/${RAWDATA}/ ${JBROWSE}/files;
 fi;
 ln -sf ${DATA_DIR}/dmel.json ${JBROWSE_DATA}/${ORGANISM}/raw/;
-# rm ${JBROWSE}/index.html && ln -s ${DATA_DIR}/index.html ${JBROWSE}/;
+rm ${JBROWSE}/index.html && ln -s ${DATA_DIR}/index.html ${JBROWSE}/;
 
 ###############################################
 ###############  LOAD SEQ/ANNOTATIONS   ################

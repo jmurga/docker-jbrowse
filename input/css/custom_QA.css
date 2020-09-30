@@ -71,7 +71,7 @@ table.classTable_data{
     } table.classTable_data td{
         vertical-align:middle;
         text-align:center;
-        background-color:#ffffff;
+        background-color:#000000;
         border: 1px solid #cccccc;
         padding:0.08em;
         font-size: 1em;

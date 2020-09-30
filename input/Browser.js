@@ -782,7 +782,7 @@ initView: function() {
         var about = this.browserMeta();
         var aboutDialog = new InfoDialog(
             {
-                title: 'About '+about.title,
+                title: 'About '+ about.title,
                 content: about.description,
                 className: 'about-dialog'
             });
@@ -795,7 +795,7 @@ initView: function() {
             + ' <div class="classDiv_logo">'
             +      '<!-- Next <span> serves as an "inline-block" HTML element that helps to align the logo to the middle (vertically) -->'
             +      '<span class="classSpan_helper"></span>'
-            +      '<img class="classImg_logo" title="DEST population genomics browser" alt="DEST population genomics browser" src="img/custom_logo.png">'
+            +      '<img class="classImg_logo" title="DEST population genomics browser" alt="DEST population genomics browser" src="img/dest_banner.png">'
             + ' </div>'
         }, header);
         // Variables *************************************
@@ -847,6 +847,14 @@ initView: function() {
             {
                 title: resourcesDifferentiation.title,
                 content: resourcesDifferentiation.description,
+                className: 'about-dialog'
+            });
+
+        var tracksDescription = this.InfoTracks();
+        var tracksDescription = new InfoDialog(
+            {
+                title: tracksDescription.title,
+                content: tracksDescription.description,
                 className: 'about-dialog'
             });
 			
@@ -1115,7 +1123,7 @@ initView: function() {
                         iconClass: 'dijitIconFolderClosed',
                         onClick: function(){
                             var initLocation = window.location.href.match(/loc=([^&]*)/)[1];
-                            window.open('bin/downloadPool.php?genomicLoc=region&value=' + initLocation,'_blank','');
+                            window.open('files/index.php?genomicLoc=region&value=' + initLocation,'_blank','');
                         }
                     }
         );
@@ -1123,20 +1131,20 @@ initView: function() {
         this.addGlobalMenuItem( 'tools', this._addDownloadPoolRegion );
 
 
-        this._addDownloadPoolGenomic = new dijitMenuItem(
+/*        this._addDownloadPoolGenomic = new dijitMenuItem(
                     {
                         id: 'menubar_download_pool',
                         label: 'Download scaffold',
                         iconClass: 'dijitIconFolderClosed',
                         onClick: function(){
                             var initLocation = window.location.href.match(/loc=([^&]*)/)[1];
-                            window.open('bin/downloadPool.php?genomicLoc=genomic&value=' + initLocation,'_blank','');
+                            window.open('files/index.php?genomicLoc=genomic&value=' + initLocation,'_blank','');
                         }
                     }
         );
 
         this.addGlobalMenuItem( 'tools', this._addDownloadPoolGenomic );
-
+*/
         this._addDownloadWig = new dijitMenuItem(
                     {
                         id: 'menubar_downloadwig',
@@ -1226,7 +1234,7 @@ initView: function() {
                                             id: 'menubar_tracksdescription',
                                             label: 'Tracks description',
                                             iconClass: 'dijitIconDocuments',
-                                            onClick: showHelp
+                                            onClick: dojo.hitch( tracksDescription, 'show' )
                                         }
                                     );
             this.addGlobalMenuItem( 'help', this._addTracksDescription );
@@ -1787,6 +1795,18 @@ Data: function() {
     return custom_DataDescription;
 },
 
+InfoTracks: function() {
+    var custom_DataDescription = {};
+    custom_DataDescription.title = custom_DataDescription.title || 'Tracks Description';
+    
+    // Read the content from an HTML file (more confortable to edit)
+    var html_file = "./html/custom_TracksDescription.html";
+    custom_DataDescription.description = this.readHTML(html_file);
+
+    return custom_DataDescription;
+},
+
+
 Dest: function() {
     var aboutDest = {};
     aboutDest.title = aboutDest.title || 'About Dest';
@@ -1824,12 +1844,12 @@ downloadPool: function() {
     //var initLocation = window.location.href.match(/loc=([^&]*)/)[1].replace('%3A', '..').split('..');
     //var initLocation = this.makeShareLink();
     var initLocation = this.browser.locationBox.get('value')
-    console.log('*****************');
+/*    console.log('*****************');
     console.log(typeof initLocation);
     console.log(initLocation);
-    console.log('*****************');
+    console.log('*****************');*/
     
-    //download.description = '<html><head><title>Downlaod pool-seq data</title></head><body><form action="bin/downloadPool.php" method="post"><p>Coordinates:<input type="text" id="coordinates" name="coordinates" value="' + initLocation[0] + ':' + initLocation[1] + '-' + initLocation[2] + '"></p><br><button style="text-align:center;" type="submit">Download here your files</button></form></body></html>';
+    //download.description = '<html><head><title>Download pool-seq data</title></head><body><form action="bin/downloadPool.php" method="post"><p>Coordinates:<input type="text" id="coordinates" name="coordinates" value="' + initLocation[0] + ':' + initLocation[1] + '-' + initLocation[2] + '"></p><br><button style="text-align:center;" type="submit">Download here your files</button></form></body></html>';
     download.description = initLocation;
     return download;
 },

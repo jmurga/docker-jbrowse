@@ -26,214 +26,22 @@
         <div class="classDiv_help_dialog">
             <div class="mainData">
             <dl>
-                <p align="justify">The 1000 Genomes Project (1000GP) set out to provide a comprehensive description of common human genetic variation by applying whole-genome sequencing to a diverse set of individuals from multiple populations. In the final phase of the project (Phase 3), the consortium published the reconstruction of the genomes of 2,504 individuals from 26 populations using a combination of low-coverage whole-genome sequencing, deep exome sequencing, and dense microarray genotyping (The 1000 Genomes Project Consortium 2015). With 84.7 million single nucleotide polymorphisms (SNPs), the resource is estimated to include >99% of SNP variants with a frequency of >1% for a variety of ancestries.</p>
+                <p align="justify">We assembled 246 Pool-Seq libraries of population samples from Europe, North America and the Caribbean which were densely sampled through time and space by two collaborative population genomics consortia in North America (DrosRTEC: https://web.sas.upenn.edu/paul-schmidt-lab/dros-rtec/) and Europe (DrosEU: http://droseu.net) between 2003 and 2016. In addition, we integrated genomic data from >900 inbred or haploid genomes from African, European, Australian, and North American available from the Drosophila Genomes Nexus  (DGN; Lack et al. 2015, 2016), making this repository the largest concatenated dataset of whole-genome SNP polymorphisms available for D. melanogaster to date. 
+                </p>
 
-                <p align="justify">We have created a pipeline for the population genomics analysis of the 1000GP data, by removing inbred individuals (Gazal <i>et al.</i> 2015), removing non-accessible nucleotides (see <b>Help -> Genome accessibility</b>), and adding an outgroup species (chimpanzee version panTro4). At the present moment, a large battery of variation, divergence, linkage disequilibrium and tests of neutrality are available for all 26 human 1000GP populations, both analyzed in sliding windows along the human genome (see <b>Help -> Tracks description</b>), and for each gene separately (see <b>Help -> Integrative MKT</b>).</p>
+                <p align="justify">Two complementary strategies have been implemented to maximize the number of trustworthy low-frequency variants while minimizing the number of false-positive sequencing errors. Accordingly, heuristic approaches such as VarScan (cite), PoPoolation (cite) or Pool-SNP (cite) integrate the allelic information across multiple independent samples and apply stringent global allele count and allele frequency thresholds for variant detection. This approach allows to detect common variants with a low overall frequency above a given threshold, but is not very sensitive to rare private alleles. Conversely, probabilistic approaches, as implemented in SNAPE (cite), use a priori information about genetic variation in a given population as a prior to distinguish sequencing errors from real SNPs using Bayesian statistics. Complementary to the heuristic approaches described above, SNAPE calls SNP variants in single samples which facilitates the detection of private alleles but does not allow to take into account information from other samples. In our automated analysis pipeline, we take advantage of both approaches and implement the methods of Pool-SNP and SNAPE in our pipeline and compare their performance.
+                Specifically, we consider a position polymorphic if (1) the cumulative allele count of a minor allele across all samples is ≥ 50, if (2) the cumulative allele frequency is ≥ 0.001 and (3) less than 50% of all samples have missing data at the given position. SNP polymorphisms are then annotated with SNPeff (v. XXX; Cingolani et al. 2012) and stored in VCF and BCF (Danecek et al. 2011) file formats alongside an index file in TABIX format (Li 2011). VCF files were further converted to GDS format [cite] using the R package SeqArray [cite].
+                </p>
 
-                <p align="justify">The 26 analyzed 1000GP populations (The 1000 Genomes Project Consortium 2015) are listed below:</p>
+                <p align="justify">The N analyzed 1000GP populations are listed below:</p>
  
-<p align="center">
+                <p align="center">
+                  <table style="width:100%">
+                  </table>
 
-  <table style="width:100%">
-    <tr>
-	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#cccccc">Population Description</td>
-        <td bgcolor="#cccccc">Population Code</td>
-        <td bgcolor="#cccccc">Metapopulation (Analysis Panel)</td>
-        <td bgcolor="#cccccc">Number of samples</td>
-    </tr>
-    <tr>
-	<td bgcolor="#2d74b2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#D5E3EF">Utah residents (CEPH) with Northern and Western European ancestry</td>
-        <td bgcolor="#D5E3EF">CEU</td>
-        <td bgcolor="#D5E3EF">EUR</td>
-        <td bgcolor="#D5E3EF">99</td>
-    </tr>
-    <tr>
-	<td bgcolor="#5691c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#D5E3EF">British in England and Scotland</td>
-        <td bgcolor="#D5E3EF">GBR</td>
-        <td bgcolor="#D5E3EF">EUR</td>
-        <td bgcolor="#D5E3EF">91</td>
-    </tr>
-    <tr>
-	<td bgcolor="#6fa6d6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#D5E3EF">Finnish in Finland</td>
-        <td bgcolor="#D5E3EF">FIN</td>
-        <td bgcolor="#D5E3EF">EUR</td>
-        <td bgcolor="#D5E3EF">99</td>
-    </tr>
-    <tr>
-	<td bgcolor="#8ab9e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#D5E3EF">Iberian Populations in Spain</td>
-        <td bgcolor="#D5E3EF">IBS</td>
-        <td bgcolor="#D5E3EF">EUR</td>
-        <td bgcolor="#D5E3EF">107</td>
-    </tr>
-    <tr>
-	<td bgcolor="#acd1f2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#D5E3EF">Toscani in Italia</td>
-        <td bgcolor="#D5E3EF">TSI</td>
-        <td bgcolor="#D5E3EF">EUR</td>
-        <td bgcolor="#D5E3EF">107</td>
-    </tr>
-    <tr>
-	<td bgcolor="#f5ec05">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">Esan in Nigeria</td>
-        <td bgcolor="#FDFBD1">ESN</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">99</td>
-    </tr>
-    <tr>
-	<td bgcolor="#f7f14a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">Gambian in Western Division, Mandinka</td>
-        <td bgcolor="#FDFBD1">GWD</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">113</td>
-    </tr>
-    <tr>
-	<td bgcolor="#faf56b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">Luhya in Webuye, Kenya</td>
-        <td bgcolor="#FDFBD1">LWK</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">99</td>
-    </tr>
-    <tr>
-	<td bgcolor="#f5f287">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">Mende in Sierra Leone</td>
-        <td bgcolor="#FDFBD1">MSL</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">85</td>
-    </tr>
-    <tr>
-	<td bgcolor="#f5f39f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">Yoruba in Ibadan, Nigeria</td>
-        <td bgcolor="#FDFBD1">YRI</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">108</td>
-    </tr>
-    <tr>
-	<td bgcolor="#faf8b9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">African Caribbean in Barbados</td>
-        <td bgcolor="#FDFBD1">ACB</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">96</td>
-    </tr>
-    <tr>
-	<td bgcolor="#fafabe">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#FDFBD1">People with African Ancestry in Southwest USA</td>
-        <td bgcolor="#FDFBD1">ASW</td>
-        <td bgcolor="#FDFBD1">AFR</td>
-        <td bgcolor="#FDFBD1">61</td>
-    </tr>
-    <tr>
-	<td bgcolor="#008f00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#CCE8CC">Chinese Dai in Xishuangbanna, China</td>
-        <td bgcolor="#CCE8CC">CDX</td>
-        <td bgcolor="#CCE8CC">EAS</td>
-        <td bgcolor="#CCE8CC">93</td>
-    </tr>
-    <tr>
-	<td bgcolor="#33b033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#CCE8CC">Han Chinese in Beijing, China</td>
-        <td bgcolor="#CCE8CC">CHB</td>
-        <td bgcolor="#CCE8CC">EAS</td>
-        <td bgcolor="#CCE8CC">103</td>
-    </tr>
-    <tr>
-	<td bgcolor="#37b337">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#CCE8CC">Southern Han Chinese</td>
-        <td bgcolor="#CCE8CC">CHS</td>
-        <td bgcolor="#CCE8CC">EAS</td>
-        <td bgcolor="#CCE8CC">105</td>
-    </tr>
-    <tr>
-	<td bgcolor="#6dd66d">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#CCE8CC">Japanese in Tokyo, Japan</td>
-        <td bgcolor="#CCE8CC">JPT</td>
-        <td bgcolor="#CCE8CC">EAS</td>
-        <td bgcolor="#CCE8CC">104</td>
-    </tr>
-    <tr>
-	<td bgcolor="#90de90">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#CCE8CC">Kinh in Ho Chi Minh City, Vietnam</td>
-        <td bgcolor="#CCE8CC">KHV</td>
-        <td bgcolor="#CCE8CC">EAS</td>
-        <td bgcolor="#CCE8CC">99</td>
-    </tr>
-    <tr>
-	<td bgcolor="#8e3ea3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#E8DCEB">Bengali in Bangladesh</td>
-        <td bgcolor="#E8DCEB">BEB</td>
-        <td bgcolor="#E8DCEB">SAS</td>
-        <td bgcolor="#E8DCEB">86</td>
-    </tr>
-    <tr>
-	<td bgcolor="#a965ba">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#E8DCEB">Gujarati Indians in Houston, TX, USA</td>
-        <td bgcolor="#E8DCEB">GIH</td>
-        <td bgcolor="#E8DCEB">SAS</td>
-        <td bgcolor="#E8DCEB">103</td>
-    </tr>
-    <tr>
-	<td bgcolor="#c587d6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#E8DCEB">Indian Telugu in the UK</td>
-        <td bgcolor="#E8DCEB">ITU</td>
-        <td bgcolor="#E8DCEB">SAS</td>
-        <td bgcolor="#E8DCEB">102</td>
-    </tr>
-    <tr>
-	<td bgcolor="#d5a3e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#E8DCEB">Punjabi in Lahore, Pakistan</td>
-        <td bgcolor="#E8DCEB">PJL</td>
-        <td bgcolor="#E8DCEB">SAS</td>
-        <td bgcolor="#E8DCEB">96</td>
-    </tr>
-    <tr>
-	<td bgcolor="#d3a2de">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#E8DCEB">Sri Lankan Tamil in the UK</td>
-        <td bgcolor="#E8DCEB">STU</td>
-        <td bgcolor="#E8DCEB">SAS</td>
-        <td bgcolor="#E8DCEB">102</td>
-    </tr>
-    <tr>
-	<td bgcolor="#ab3b35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#F3DDDC">Colombians in Medellin, Colombia</td>
-        <td bgcolor="#F3DDDC">CLM</td>
-        <td bgcolor="#F3DDDC">AMR</td>
-        <td bgcolor="#F3DDDC">94</td>
-    </tr>
-    <tr>
-	<td bgcolor="#ba5852">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#F3DDDC">People with Mexican Ancestry in Los Angeles, CA, USA</td>
-        <td bgcolor="#F3DDDC">MXL</td>
-        <td bgcolor="#F3DDDC">AMR</td>
-        <td bgcolor="#F3DDDC">64</td>
-    </tr>
-    <tr>
-	<td bgcolor="#cc7570">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#F3DDDC">Peruvians in Lima, Peru</td>
-        <td bgcolor="#F3DDDC">PEL</td>
-        <td bgcolor="#F3DDDC">AMR</td>
-        <td bgcolor="#F3DDDC">85</td>
-    </tr>
-    <tr>
-	<td bgcolor="#de9d99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td bgcolor="#F3DDDC">Puerto Ricans in Puerto Rico</td>
-        <td bgcolor="#F3DDDC">PUR</td>
-        <td bgcolor="#F3DDDC">AMR</td>
-        <td bgcolor="#F3DDDC">104</td>
-    </tr>
-  </table>
-
-<iframe allowfullscreen src="//e.infogram.com/pophuman-20205262?src=embed" title="PopHuman" width="950" height="440" scrolling="no" frameborder="0" style="border:none; align:center;"></iframe>
+                    SAMPLES IMAGE
 <!-- <br><img src="http://www.internationalgenome.org/sites/1000genomes.org/files/images/1000g_map.png" style="width:100%"><br> -->
 
-</p>
-                <p align="justify">Note that population genetics statistics are not calculated for metapopulations nor across the whole 1000GP dataset. The reason is that population genetics statistics all assume that analyzed genomes are a random sample of a non-stratified population, and the aggregation of genomes from multiple diverse populations around the globe does not satisfy any of the two assumptions.</br></br></p>
-
-                <dt>+ References</dt>
-                <p align="justify">- Gazal, S. <i>et al.</i> (2015). High level of inbreeding in final phase of 1000 Genomes Project. Sci. Rep., 5: 17453. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/26625947" target="_blank">link</a>]</br>- The 1000 Genomes Project Consortium, (2015). A global reference for human genetic variation. Nature, 526: 68-74. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/26432245" target="_blank">link</a>]</p>
             </dl>
             </div>
         </div>
