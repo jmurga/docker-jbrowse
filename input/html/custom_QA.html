@@ -7,7 +7,7 @@
         <!-- **************************************************************************** -->
 
         <!-- Page title -->
-        <title>Dest Tutorial</title>
+        <title style="color:black">Dest Tutorial</title>
 
         <!-- Site metadata -->
         <meta charset='UTF-8'>
@@ -16,353 +16,139 @@
         <!-- STYLES -->
         <!-- **************************************************************************** -->
         <link rel="stylesheet" type="text/css" href="../../css/custom_QA.css" />
-
-	<style>
-	body {
-	    max-width: 1000px;
-	}
-	</style>
-
     </head>
 
     <body>
-      <div class="classDiv_content">
+        <div class="classDiv_content">
 
-	<h1 option style="color:#396494"><big><b>Dest Tutorial</b></big></h1><br>&nbsp;
+			<h1 option style="color:black"><b>Dest Tutorial</b></h1><br>
 
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><a href="files/html/custom_QA.html" target="_blank"><font color="#000000"><b>If you prefer, you can display this tutorial in a new tab</b></font></a><br>
-	    </td>
-	  </tr>
-	</table>
+			<div class="classDiv_step">
+				<p class="classP_step"><b><big>Overview</b></big></p>
+				<ol type="1">
+					<a href="#1"><li>First of all: data selection</li></a>
+					<a href="#2"><li>Setting the visualization mode</li></a>
+					<a href="#3"><li>Example questions which can be answered using Dest</li></a>
+					<ul style="list-style-type:none">
+						<a href="#32"><li>3.1. Does my region of interest show adaptive functional differences between populations?</li></a>
+						<a href="#33"><li>3.2. What information is available for my gene of interest?</li></a>
+						<a href="#36"><li>3.3. Is there any polymorphic inversion overlapping my region of interest? If so, what is the frequency of the different genotypes among populations?</li></a>
+					</ul>
+					<a href="#4"><li>Downloading track data</li></a>
+					<a href="#5"><li>Saving the current browser instance</li></a>
+					<a href="#6"><li>Uploading custom tracks</li></a>
+				</ol>
+			</div>
+			<br><br>
 
+			<p class="classP_justified">Prior to start browsing the Dest database, it is highly recommended to read through the &ldquo;<a href="./html/custom_DataDescription.html" target="_blank">Data description</a>&rdquo; and &ldquo;<a href="./html/custom_TracksDescription.html" target="_blank">Tracks description</a>&rdquo; sections of the Help. <!-- For an exhaustive review on molecular population genetics see Casillas S. and Barbadilla A. (2017) Molecular Population Genetics. <i>Genetics: in press</i>. --><br><br>Dest stores +N tracks with information about N population<i>Drosophila melanogaster</i> populations. <br><br>Before attempting to answer any biological question, you need to decide for which population(s) data is going to be displayed. This can be done through the &ldquo;Data selection&rdquo; section from the left-side menu of the &ldquo;. Within this section, tracks can be filtered according to population. Keep in mind that filters are added accumulatively!
+			<br>
+			<br>
+			<div id="1">
+				<p><b><big>1. First of all: data selection</b></big></p>
+			</div>
+			For the sample questions proposed in this document, the X population is used.
+			<b>1.</b> A&gt; 
+			<b>2.</b> B &gt; 
+			<b>3.</b> C (Figure 1).</p><br>
+			IMAGE HERE	
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/1.png" width="60%" height="60%" style="min-width:60em;"></div> -->
+			<p class="classP_footer"><b>Figure 1.</b> Data selection: X population.</p>
+			<br>
+			<br><br>
 
-	<h2 id="C0">Overview</h2>
+			<div id="2"><p><big><b>2. Setting the visualization mode</b></big></p></div>
 
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494">
-		<ol>
-		  <li><a href="#C1"><font color="#000000"><b>What is PopHuman? </b></font></a></li>
-		  <li><a href="#C2"><font color="#000000"><b>About this tutorial </b></font></a></li>
-		  <li><a href="#C3"><font color="#000000"><b>What information is available for my gene of interest? </b></font></a></li>
-		  <li><a href="#C4"><font color="#000000"><b>Data selection </b></font></a></li>
-		  <li><a href="#C5"><font color="#000000"><b>Has my region of interest experienced a recent selective sweep? </b></font></a></li>
-		  <li><a href="#C6"><font color="#000000"><b>Does my gene show recurrent adaptive protein evolution between species? </b></font></a></li>
-		  <li><a href="#C7"><font color="#000000"><b>Does the target region have variants at specific sites of interest? </b></font></a></li>
-		  <li><a href="#C8"><font color="#000000"><b>Downloading track data </b></font></a></li>
-		  <li><a href="#C9"><font color="#000000"><b>Uploading custom tracks </b></font></a></li>
-		  <li><a href="#C10"><font color="#000000"><b>Saving the current browser instance </b></font></a></li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
+			<p class="classP_justified">Once you have decided the population(s) of interest, it is time to choose the proper visualization mode. Most quantitative tracks have been computed at different resolution scales (ranging from 1 to 100 kb) (Figure 2). The appropriate window size selection depends on the size of the region of interest. In general, to inspect whole-genome patterns, it is recommended to use 100 kb or 50 kb windows, whereas if the analysis is focused on a small region, 10 kb or even 1 kb windows would be preferred.</p><br>
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/2.png" width="15%" height="15%" style="min-width:15em;"></div> -->
+			IMAGE HERE
+			<p class="classP_footer"><b>Figure 2.</b> Visualization mode (window size) selection.</p>
+			<br>
 
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C1">1. What is PopHuman?</h2>
+			<div id="3"><p><big><b>3. Example questions which can be answered using Dest:</b></big></p><div id="1">
+			
+			THESE ARE THE SAME EXAMPLES AT POPFLY. IF YOU WANT TO SHOW ANOTHER REGION/GENE WITH ANY EVIDENCE OF SELECTION. LET ME KNOW.
 
-	<p>PopHuman is a population genomics-oriented genome browser, based on JBrowse, that contains a complete inventory of nucleotide diversity metrics, linkage disequilibrium, recombination rates and neutrality tests in sliding windows along the human genome estimated from the 1000 Genomes Project data using the PopGenome software.</p>
-	<p>For a more detailed explanation of the source data and how it has been processed for PopHuman, we recommend reading through the <b>Help &rarr; Data description</b>, <b>Help &rarr; Genome accessibility</b>, and <b>Help &rarr; Population differentiation</b> pages. In addition, <b>Help &rarr; Tracks description</b> defines all the available tracks for windows-based analyses in PopHuman, and <b>Help &rarr; Integrative MKT</b> explains the extended MKT method applied to both windows-based and gene-based analyses.</p>
+			<p class="classP_justified">Dest is designed to help testing evolutionary hypotheses from a population genetics perspective. Below are some examples of questions that can be answered using Dest. Questions are sequential and the whole guide constitutes an example of how to analyze a specific region of the genome.<br><br>The region of interest is <b>2L:5022509..5047291</b>, a genomic area of around 25 kb placed in chromosome arm 2L, where the <i>Cg25C</i> gene is located. This region has been reported to be under positive selection (Garud <i>et al</i>., 2015; Garud and Petrov 2016). Moreover, <i>Cg25C</i> gene is a well-studied protein coding gene which belongs to the type IV collagen family, related to immune system activation (Kiss <i>et al</i>., 2016) and to cold adaptation in Drosophila (MacMillan <i>et al</i>., 2016).
+			<br>
+			<br>
+			To display the target region, type the gene name at the coordiantes box. It is possible to highlight the region of interest using the corresponding utility located next to the genomic coordinates box. This allows exploring broader genomic areas without losing the region of interest.</p>
+			<br>
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/3.png" width="80%" height="50%" style="min-width:50em;"></div>
+			<p class="classP_footer"><b>Figure 3.</b> Genomic coordinates box and highlight utility button</p> -->
+			<br>
+			<br>
+			<div id="32"><p class="classP_justified2"><b>3.1. Does my region of interest show adaptive functional differences between populations?</b></p></div>
+			<p class="classP_justified2">Usually, selective sweeps are due to adaptive variants that have been selected in a specific population. As a result, this specific population becomes genetically differentiated in the selected region (high 
+				<span class="tooltip_link">fst
+					<span class="classic_tt">
+						F<sub>ST</sub>
+					</span>
+				</span>
+				 values). To test if the region of interest shows adaptive functional differences between populations, 
+				<span class="tooltip_link">fst
+					<span class="classic_tt">
+						F<sub>ST</sub> estimates
+					</span>
+				</span>
+				 estimates (located in the &ldquo;Population differentiation&rdquo; sub-section of the &ldquo;Track selector&rdquo; tab) should be considered.<br><br>We examine 
+				<span class="tooltip_link">fst
+					<span class="classic_tt">
+						F<sub>ST</sub>
+					</span>
+				</span>
+				 values between A and B, C, D and E populations. Since A and B are cosmopolitan populations it is expected to observe higher population differentiation values between A and ancestral ones (C, D and E.</p>
+			<br>
+			<div class="classDiv_step">
+			IMAGE HERE
+			<div id="33"><p class="classP_justified2"><b>3.2. What information is available for my gene of interest?</b></p></div>
+			<p class="classP_justified2">The Dest browser includes a report for each gene annotation, as well as direct links to the databases NCBI and FlyBase. Hence, information regarding location, structure, sequence, gene ontology, gene expression, literature about the gene of interest, etc. can be accessed directly from the browser interface.<br><br>By right-clicking the gene of interest, a drop-down menu appears with several options (including the ones to search for the specific feature at both NCBI and FlyBase databases). These options can also be accessed from the &ldquo;View details&rdquo; dialog (Figure 7). Moreover, note that it is possible to search for a specific feature name (such as a gene symbol) using the genomic coordinates box and pressing the &ldquo;Go&rdquo; button.</p><br>
+			IMAGE HERE
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/9.1.png" width="50%" height="50%" style="min-width:50em;"></div>
+			<div class="classDiv_img"><img src="../../img/custom_QA/9.2.png" width="50%" height="30%" style="min-width:30em;"></div>
+			<p class="classP_footer"><b>Figure 7.</b> Feature search box (top) and &ldquo;View details&rdquo; dialog box (bottom) with links to NCBI and FlyBase databases.</p> -->
+			<br>
+			<div id="36"><p class="classP_justified2"><b>3.3. Is there any polymorphic inversion overlapping my region of interest? If so, what is the frequency of the different genotypes among populations?</b></p></div>
+			<p class="classP_justified2">Dest includes a track with annotations of polymorphic 
+				<span class="tooltip_link">inversions
+					<span class="classic_tt">
+						Coordinates of the 19 most studied polymorphic inversions in the <i>Drosophila melanogaster</i> genome (Corbett-Detig and Hartl 2012; Huang <i>et al</i>., 2014).
+					</span>
+				</span>
+				 identified in the <i>D. melanogaster</i> genome (Corbett-Detig and Hartl 2012; Huang <i>et al</i>., 2014). This track is located in the &ldquo;Reference tracks&rdquo; section of the &ldquo;Track selector&rdquo; tab.<br><br>As it is known that most inverted haplotypes in <i>Drosophila</i> have emerged much recently than the standard ones (assuming that the inverted haplotype is the derived allele), it may be critical to inspect the frequency distribution of such haplotypes in any given population when identifying, for example, a region of low diversity (putative selective sweep), since the signature of decreased nucleotide diversity levels may instead be due to the low recombination as a result of an inversion (Corbett-Detig and Hartl 2012; Huang <i>et al</i>., 2014).<br><br>Note that one inversion overlaps the region of interest. Right-click the inversion annotation to visualize all the options in a drop-down menu. Information about this inversion can be visualized in the options &ldquo;View details&rdquo; and &ldquo;View frequency distribution among populations&rdquo; (Figure 10).</p><br>
+			<br>
+			IMAGE HERE
+			<br>
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/8.1.png" width="45%" height="45%" style="min-width:50em;"></div>
+			<div class="classDiv_img"><img src="../../img/custom_QA/8.2.png" width="40%" height="40%" style="min-width:45em;"></div>
+			<p class="classP_footer"><b>Figure 10.</b> Inversion genotypes frequency distribution among populations (top: accessing the inversion dialog; bottom: inversion&rsquo;s frequency dialog box).</p> -->
+			<br>
+			<div id="4"><p><b><big>4. Downloading data</b></big></p></div>
+			<p class="classP_justified">To download track data or pool-seq data from the browser interface, place the mouse over the track title (on the left), press the arrow which appears to the right of the track label, and select the &ldquo;Save track data&rdquo; option. In the dialog, define the region of interest (visible region or whole reference sequence), the output format (bedGraph, wiggle or gff3) and file name, and press the &ldquo;Save&rdquo; button (Figure 11).</p><br>
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/11.png" width="80%" height="30%" style="min-width:15em;"></div>
+			<p class="classP_footer"><b>Figure 11.</b> Downloading track data.</p><br> -->
+			<br><br>
+			<p>Dest incorporates an utility specifically designed for easy and fast downloading of pool-seq data or tracks information. This utility can be accessed from the main browser interface by clicking at <i>Tools</i> options.
+			The utility redirects the user to a specific web-page create to easy download the coordinates which are being displayed  at the moment you click or another any coordinates. It is required to provide the genomic coordinates (chr, start, and end) of the target region, as well as the population of interest.
+			<br>
+			IMAGE HERE
+			<br>
 
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C2">2. About this tutorial</h2>
-
-	<p>PopHuman is designed to help testing evolutionary hypotheses from a population genetics perspective. Below are some examples of questions that can be answered using PopHuman. Questions are sequential and the whole guide constitutes an example of how to analyze a specific region of the genome.</p>
-	<p>Our region of interest in this tutorial will be <b>chr7:142566051..142586393</b>, a genomic area of around 20 kb in chromosome 7, where the <b><i>TRPV6</i></b> gene is located. The <i>TRPV6</i> gene is a well-studied protein coding gene which encodes a member of a family of multipass membrane proteins that functions as an epithelium calcium channel involved in the absorption of calcium from the diet in the intestine. It has been suggested that <i>TRPV6</i> may have co-evolved with lactose tolerance, as fresh milk is a major source of calcium in European populations (Hughes <i>et al.</i> 2008). The region has experienced parallel selection sweeps in non-African populations, coinciding with the establishment of agriculture first in Europe about 10,000 years ago, and later in Asia. 
-
-To display the target region, either type its coordinates or the <i>TRPV6</i> gene name into the corresponding box from the navigation bar section, and then press the “Go” button (Figure 1). It is possible to highlight the region of interest using the marker button located next to the genomic coordinates box and then clicking and dragging the region to be highlighted. This allows exploring broader genomic areas without losing the region of interest.</p>
-
-	<img src="../../img/custom_QA/Figure1.png" width="100%">
-	<p><b><i>Figure 1.</b> Genomic coordinates box and highlight utility button.</i></p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>Enter either the location of interest (chr7:142566051..142586393) or the gene name (<i>TRPV6</i>) in the appropriate box and click “Go”</li>
-		  <li>Click the “Highlight a Region” button <img src="../../img/custom_QA/Highlight.png" width="28"></li>
-		  <li>Click and drag the region where the gene <i>TRPV6</i> is located</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C3">3. What information is available for my gene of interest?</h2>
-
-	<p>The PopHuman browser includes a report for each gene annotation, as well as direct links to NCBI and UCSC. Hence, information regarding location, structure, sequence, gene ontology, gene expression, literature, etc. about the gene of interest can be accessed directly from the browser interface.</p>
-	<p>By right-clicking the gene of interest, a drop-down menu appears with several options (including “View details”, as well as the ones to search for the specific gene at both NCBI and UCSC) (Figure 2). </p>
-
-	<img src="../../img/custom_QA/Figure2.png" width="100%">
-	<p><b><i>Figure 2.</b> Drop-down menu with options for annotated genes.</i></p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>Complete all the previous step-by-step guides if you have not already done so</li>
-		  <li>Locate the “Gene annotations” track on the browser</li>
-		  <li>Locate the <i>TRPV6</i> gene (within the region highlighted in yellow)</li>
-		  <li>Right-click on a <i>TRPV6</i> transcript to display a drop-down menu with all options</li>
-		  <li>Click “View details” to visualize all the information for this gene, including direct links to the NCBI and UCSC databases</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C4">4. Data selection</h2>
-
-	<p>PopHuman includes +1000 tracks, including both general tracks of the human hg19 reference sequence, and variation metrics for the 26 1000GP populations. Given the large number of tracks available, these can be filtered and selected using the “Select tracks” tool, which is displayed on the top left corner (below the navigation bar). This tool is used to narrow your search in order to finally find and select your track of interest, and this process can be done several times in order to finally get all the desired tracks selected. The filtering process is normally performed by refining your search using the menu on the left, in which track features are classified according to four major categories: Reference tracks, Data selection (by metapopulation and/or population), Variation statistics, and Visualization (only one available window size of 10 kb by now).</p>
-	<p>Tracks for the European CEU (Utah Residents (CEPH) with Northern and Western European Ancestry) population will displayed along this tutorial. This population includes 99 individuals. To filter tracks for this population, navigate to the “Data selection” section from the left-side menu of the “Track selector” tab (located in the top left corner, below the navigation bar) and select Population: CEU (Figure 3).</p>
-
-	<img src="../../img/custom_QA/Figure3.png" width="100%">
-	<p><b><i>Figure 3.</b> Data selection: CEU population.</i></p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>Complete all the previous step-by-step guides if you have not already done so</li>
-		  <li>Open the “Track selector” tab (located in the top left corner, below the navigation bar)</li>
-		  <li>Locate the “Data selection” section from the left-side menu</li>
-		  <li>Click the “Population” sub-section and select “CEU”</li>
-		  <li>You should next select the tracks you want to display on the browser from the main panel on the right (see next sections below)</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C5">5. Has my region of interest experienced a recent selective sweep?</h2>
-
-	<p>Natural selection leaves signatures in the genome that can be now identified if polymorphic sequences within populations and divergent sequences between species are compared:</p>
-	<ol>
-	  <li>A reduction in the genetic diversity (low Pi)</li>
-	  <li>A skew towards rare derived alleles (negative Tajima_D, negative FuLi_D, negative FuLi_F)</li>
-	  <li>An increase in the linkage disequilibrium (high r²)</li>
-	  <li>In case the selective sweep was incomplete, we also expect an excess of high frequency derived alleles (negative FayWu_H), representing alleles that were swept to high frequency but did not reach fixation because recombination broke the linkage between them and the selected variant</li>
-	</ol> 
-	<p>Other signatures might include relatively high levels of divergence (high K), and low haplotype diversity (low hap_diversity_within).</p>
-	<p>In this section we are going to explore the nucleotide diversity and divergence levels on the target region, as well as the distribution of rare alleles (through the Tajima's D statistic) and the degree of linkage disequilibrium.</p>
-	<p>Use the “Select tracks” tool to select Pi, theta, hap_diversity_within, K, Kelly_ZnS (average of r²) and Tajima_D metrics, computed in 10 kb non-overlapping windows, for the CEU population (Figure 4).</p>
-
-	<img src="../../img/custom_QA/Figure4.png" width="100%">
-	<p><b><i>Figure 4.</b> Procedure to select certain tracks (in this case, Pi, theta and hap_diversity_within ).</i></p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>1. Complete all the previous step-by-step guides if you have not already done so</li>
-		  <li>2. Open the “Track selector” tab (located in the top left corner, below the navigation bar)</li>
-		  <li>3. Locate the “Variation statistics” section from the left-side menu</li>
-		  <li>4. Click the “Frequency-based nucleotide variation” sub-section and select “Pi”, “theta” and “hap_diverity_within”</li>
-		  <li>5. Click the “Divergence-based metrics” sub-section and select “K”</li>
-		  <li>6. Click the “Linkage disequilibrium” sub-section and select “Kelly_ZnS”</li>
-		  <li>7. Click the “Selection tests based on SFS and/or variability” sub-section and select “Tajima_D”</li>
-		  <li>8. Select all the tracks that appear in the main panel on the right (“Pi_CEU_10kb”, “theta_CEU_10kb” and “hap_diversity_within_CEU_10kb”, “K_CEU_10kb”, “Kelly_ZnS_CEU_10kb”, and “Tajima_D_CEU_10kb”)</li>
-		  <li>9. Click the button “Back to browser” on top of the main panel on the right</li>
-		  <li>10. Zoom out from the target region by using the main navigation buttons <img src="../../img/custom_QA/ZoomOut.png" width="28"></li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p>Figure 5 represents the target region (with the location of the gene <i>TRPV6</i> highlighted in yellow) with 6 activated tracks: Pi, theta, Tajima D, K, hap_diversity_within, and Kelly_ZnS. This region shows a clear decrease in nucleotide diversity (Pi and theta, in blue), and a skew towards rare derived alleles (negative Tajima_D, in red). Furthermore, divergence (K, in brown) is increased in the specific region of the <i>TRPV6</i> gene, as well as r² (Kelly_ZnS, in pink), while haplotype diversity (hap_diversity_within, in blue) is relatively low, specially compared to African populations.</p>
-
-	<img src="../../img/custom_QA/Figure5.png" width="100%">
-	<p><b><i>Figure 5.</b> Region of interest with the location of the gene <i>TRPV6</i> highlighted, with the tracks Pi, theta, Tajima D, K, hap_diversity_within, and Kelly_ZnS activated for the CEU population (10 kb windows size).</i></p>
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C6">6. Does my gene show recurrent adaptive protein evolution between species?</h2>
-
-	<p>To test this hypothesis, PopHuman contains several statistics derived from the McDonald and Kreitman test (MKT) (McDonald and Kreitman 1991), including NI, &alpha;, and DoS, computed in sliding windows. Table 1 summarizes these statistics:</p>
-
-	<p><b>Table 1.</b> Basic tests of neutrality for protein coding sequences in PopHuman.</i></p>
-
-	<table class="classTable_data">
-          <thead>
-	  <tr>
-	    <td align="left"><b>Statistic </b></td>
-	    <td align="left"><b>Description </b></td>
-	    <td align="left"><b>Expression </b></td>
-	    <td align="left"><b>Interpretation </b></td>
-	  </tr>
-          </thead>
-          <tbody>
-	  <tr>
-	    <td align="left">NI </td>
-	    <td align="left">Neutrality index, which summarizes the four values in a MKT 
-(McDonald and Kreitman 1991) table as a ratio of ratios (Rand and Kann 1996). </td>
-	    <td align="left">NI = (Pi0f/Pi4f) / (K0f/K4f) </td>
-	    <td align="left">=1 : neutral evolution<br>
-&lt;1 : positive selection<br>
-&gt;1 : negative selection </td>
-	  </tr>
-	  <tr>
-	    <td align="left">&alpha; (alpha, alpha_cor) </td>
-	    <td align="left">Proportion of substitutions that are adaptive based on the MK test 
-(McDonald and Kreitman 1991). &alpha; represents the proportion of adaptive evolution (Charlesworth 1994; Smith and Eyre-Walker 2002). </td>
-	    <td align="left">&alpha; = 1 - ((P0f/P4f) / (D0f/D4f)) </td>
-	    <td align="left">=0 : neutral evolution<br>
-&lt;0 : negative selection<br>
-&gt;0 : positive selection </td>
-	  </tr>
-	  <tr>
-	    <td align="left">FisherPval(Fisher1, Fisher2) </td>
-	    <td align="left">Fisher's p-value for the MKT (McDonald and Kreitman 1991) 2x2 
-contingency table, which contains Dneu (divergence in 4-fold coding sites), Dsel (divergence in 0-fold coding sites), Pneu (polymorphism in 4-fold coding sites) and Psel (polymorphism in 0-fold coding sites) </td>
-	    <td align="left"> </td>
-	    <td align="left">&gt;0.05 : neutral evolution <br>
-&lt;0.05 : negative or positive evolution </td>
-	  </tr>
-	  <tr>
-	    <td align="left">DoS </td>
-	    <td align="left">Direction of Selection: difference between the proportion of nonsynonymous 
-divergence and nonsynonymous polymorphism (Stoletzi and Eyre-Walker 2011). </td>
-	    <td align="left">DoS = (K0f/(K0f+K4f)) - (Pi0f/(Pi0f+Pi4f)) </td>
-	    <td align="left">=0 : neutral evolution<br>
-&lt;0 : negative selection<br>
-&gt;0 : positive selection </td>
-	  </tr>
-        </tbody>
-	</table>	
-
-	<p>&nbsp;</p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>Complete all the previous step-by-step guides if you have not already done so</li>
-		  <li>Open the “Track selector” tab (located in the top left corner, below the navigation bar)</li>
-		  <li>Locate the “Variation statistics” section from the left-side menu</li>
-		  <li>Click the “Selection tests based on the MKT” sub-section and select “DoS”, “Fisher2”, “alpha_cor”, and “NI”</li>
-		  <li>Select all the tracks that appear in the main panel on the right (“DoS_CEU_10kb”, “Fisher2_CEU_10kb”, “alpha_cor_CEU_10kb”, and “NI_CEU_10kb”)</li>
-		  <li>Click the button “Back to browser” on top of the main panel on the right</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p>Figure 6 below shows the target region with the estimates of NI, &alpha; (alpha_cor) , Fisher’s P-value (Fisher2) and DoS, estimated in 10 kb non-overlapping windows by considering protein coding sites only. Two estimates predict that recurrent adaptive evolution has occurred in the region of the <i>TRPV6</i> gene: NI = 0.46 (lower than 1); DoS = 0.18 (greater than 0). However, &alpha; = -0.25 (negative), and the Fisher Exact Test is not significant. In this case, the signal of positive selection is largely disguised by the stronger signal of negative selection maintaining the sequence and function of the gene.</p>
-
-	<img src="../../img/custom_QA/Figure6.png" width="100%">
-	<p><b><i>Figure 6.</b> Region of interest with NI , Mkalpha (alpha_cor) , FisherPval(Fisher2) and DoS tracks selected, CEU population, 10 kb windows size.</i></p>
-
-	<p>We can expand this information by browsing the results of the Integrative MKT (see <b>Help &rarr; Integrative MKT</b>) specifically for gene <i>TRPV6</i>.</p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>Complete all the previous step-by-step guides if you have not already done so</li>
-		  <li>Locate the “Gene annotations” track on the browser</li>
-		  <li>Right-click on the <i>TRPV6</i> gene to display a drop-down menu with all options</li>
-		  <li>Click “Integrative MKT for <i>TRPV6</i>”</li>
-		  <li>Select the populations <i>CEU</i>, <i>CHB</i> and <i>YRI</i> by clicking the appropriate checkboxes</li>
-		  <li>Click the "<i>Submit Query</i>" button and wait until the results are shown</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p>Figure 7A shows a section of the Integrative MKT report for gene <i>TRPV6</i>, which contains valuable statistics. Note first the value of the ratio Ka/Ks (Li <i>et al.</i> 1985; Nei and Gojobori 1986), Ka/Ks = 0.48. While being still lower than 1 (indicative of negative selection), this value is quite high compared to the ones found in most protein coding sequences. As before, the signal of positive selection is largely disguised by the stronger signal of negative selection maintaining the sequence and function of the gene.</p>
-	<p>Below the first table there is the Derived Allele Frequency (DAF) plot (Figure 7B). It shows that, while the African YRI population contains alleles at medium frequencies, the frequency of the alleles in both the European CEU and the Asian CHB populations is skewed towards either rare or high frequency alleles, specially in the Asian population. This is in accordance with the negative Tajima’s D, Fu and Li’s D and F, and Fay and Wu’s H values we saw before, and they represent high frequency alleles that did not reach fixation after recombination broke the linkage with the selected variant during the selective sweep, and rare alleles that entered the population by mutation after the sweep.</p>
-	<p>Below this plot different versions of the MKT (see <b>Help &rarr; Integrative MKT</b>) are shown for different functional regions of the gene (0-fold, 5’UTR, 3’UTR, intron, and intergenic flanking regions, all against 4-fold protein coding sites). Results show the action of both positive and negative selection acting in this region.</p>
-        <p><b>A</b><br>
-	<img src="../../img/custom_QA/Figure7A.png" width="100%"><br>
-        <b>B</b><br>
-        <img src="../../img/custom_QA/Figure7B.png" width="100%"><br>
-	<b><i>Figure 7. (A)</b> Section of the Integrative MKT report for the TRPV6 gene in CEU, CHB and YRI populations. <b>(B)</b> Derived Allele Frequency (DAF) plot for the TRPV6 gene in CEU, CHB and YRI populations.</i></p>
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C7">7. Does the target region have variants at specific sites of interest?</h2>
-
-	<p>In order to examine genetic variation at specific sites of interest, you might need to download raw VCF files with the subset of variants located at the region of interest. PopHuman incorporates a utility specifically designed for easy and fast downloading of such information. It can be accessed from the main browser interface by clicking the corresponding button <img src="../../img/custom_QA/DownloadVCF.png" width="28">, or from the “Resources” menu.</p>
-	<p>Once in the utility, the user is required to provide the genomic coordinates (chr, start, and end) of the target region (the genomic coordinates of the region which is currently being displayed are taken by default), as well as the population(s) of interest (Figure 8). Then, by clicking the “Download” button, a zip file containing the requested VCF will be downloaded. Then, this VCF file can be examined using a proper tool (e.g. VCFtools or BCFtools).</p>
-
-	<img src="../../img/custom_QA/Figure8.png" width="100%">
-	<p><b><i>Figure 8.</b> Download sequences utility: chr7:142363887..143174636 genomic region and CEU population selected.</i></p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>Locate the “Download sequences” utility as a button in the navigation bar, or in the “Resources” menu</li>
-		  <li>Enter the location and population of interest (Chromosome: 7; Start (bases): 142363887; End (bases): 143174636; Populations: CEU) in the appropriate boxes, and click “Download”</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C8">8. Downloading track data</h2>
-
-	<p>To download track data from the browser interface, place the mouse over the track title (on the left), press the arrow which appears to the right of the track label, and select “Save track data”. In the dialog, define the region of interest, the output format (bedGraph, Wiggle or GFF3), and the file name, and press the “Save” button (Figure 9).</p>
-
-	<img src="../../img/custom_QA/Figure9.png" width="100%">
-	<p><b><i>Figure 9.</b> Downloading track data.</i></p>
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C9">9. Uploading custom tracks</h2>
-
-	<p>To upload you own tracks, navigate to <b>Track &rarr; Open track file or URL</b> from the navigation menu located in the top-left area of the browser interface (Figure 10). Next, browse your local file or paste a remote URL in the corresponding box and customize the file type and display options. Finally, select whether you want to open immediately your custom track or rather you prefer to add it to the tracks set, and press the “Open” button.</p>
-
-	<img src="../../img/custom_QA/Figure10.png" width="100%">
-	<p><b><i>Figure 10.</b> Uploading custom tracks.</i></p>
-
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>	<h2 id="C10">10. Saving the current browser instance</h2>
-
-	<p>PopHuman allows saving any particular browser instance to be shared or visualized later on. This can be done through the “Share” button located in the top-right corner of the browser interface (Figure 11). When clicking it, the user can copy the corresponding URL, which will render the same exact PopHuman instance that is being displayed now.</p>
-
-	<img src="../../img/custom_QA/Figure11.png" width="100%">
-	<p><b>Figure 11.</b> Saving the current browser instance.</i></p>
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>PopHuman share URL with all activated tracks used in this guide: <a href="//pophuman.uab.cat/?loc=chr7%3A142363185..143197256&tracks=DNA%2Cgene_annotations%2CPi_CEU_10kb%2Ctheta_CEU_10kb%2CTajima_D_CEU_10kb%2CK_CEU_10kb%2Chap_diversity_within_CEU_10kb%2CKelly_ZnS_CEU_10kb%2CDoS_CEU_10kb%2CFisher2_CEU_10kb%2CNI_CEU_10kb%2Calpha_cor_CEU_10kb&highlight=chr7%3A142568314..142583701" target="_blank"><font color="#000000">link</font></a></b><br>
-	    </td>
-	  </tr>
-	</table>
-	
-	<p><small><a href="#C0">Top</a></small></p><p>&nbsp;</p>
-
-<!--	<h2 id="C1">1. What is PopHuman?</h2>
-
-	<p></p>
-
-	<p>&nbsp;</p>
-
-	<img src="../../img/custom_QA/FigureX.png" width="100%">
-
-	<table style="width:100%">
-	  <tr>
-	    <td align="justify" bgcolor="#396494"><b>Step-by-step guide:</b><br>
-		<ol>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		  <li>xxx</li>
-		</ol> 
-	    </td>
-	  </tr>
-	</table>	-->
-
-
-	        <dl>
-	           	<dt><b>+ References</b></dt>
-	            <p align="justify"><small>- Charlesworth, B. (1994) The effect of background selection against deleterious mutations on weakly selected, linked variants. Genet. Res. 63:213-27. <br>
-- Hughes, David A., Kun Tang, Rainer Strotmann, Torsten Schöneberg, Jean Prenen, Bernd Nilius, and Mark Stoneking. "Parallel Selection on <i>TRPV6</i> in Human Populations." PLoS ONE 3.2 (2008): 1-13. Web. <br>
-- Li, W. H., <i>et al.</i>, (1985) A new method for estimating synonymous and nonsynonymous rates of nucleotide substitution considering the relative likelihood of nucleotide and codon changes. Mol. Biol. Evol. 2:150-74. <br>
-- McDonald, J. H. and Kreitman, M. (1991) Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652-654. <br>
-- Nei, M. and Gojobori T. (1986) Simple methods for estimating the numbers of synonymous and nonsynonymous nucleotide substitutions. Mol. Biol. Evol. 3:418-426. <br>
-- Rand, D. M., and Kann, L. M. (1996) Excess amino acid polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Mol. Biol. Evol. 13:735-748. <br>
-- Smith, N. G. and Eyre-Walker, A. (2002) Adaptive protein evolution in Drosophila. Nature 415:1022-4. <br>
-- Stoletzki, N. and Eyre-Walker, A. (2011) Estimation of the Neutrality Index. Mol. Biol. Evol. 28:63-70. <br></small></p><br><br>
-	        </dl>
-
+			<div id="5"><p><b><big>5. Saving the current browser instance</b></big></p></div>
+			<p class="classP_justified">Dest allows saving any particular browser instance to be shared or visualized later on. This can be done through the &ldquo;Share&rdquo; button located in the top-right corner of the browser interface (Figure 12). When clicking it, the user can copy the corresponding URL, which will render the same exact Dest instance that is being displayed now.</p><br>
+			IMAGE HERE
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/12.png" width="80%" height="30%" style="min-width:15em;"></div>
+			<p class="classP_footer"><b>Figure 12.</b> Saving the current browser instance.</p><br> -->
+			<br><br>
+			<p><b><big>Dest share URL with all activated tracks used in this guide:</b> <a href="//Dest.uab.cat/?loc=2L%3A4983801..5067200&tracks=gene_annotations%2CZI_Pi_1kb%2CZI_Theta_1kb%2CZI_Kdyak_1kb%2CZI_r2_1kb%2CZI_TajD_1kb%2CZI_EA_fst_1kb%2CZI_FR_fst_1kb%2CZI_RAL_fst_1kb%2CZI_SP_fst_1kb%2CZI_DoS_10kb%2CZI_FisherPval_10kb%2CZI_KaKs_10kb%2CZI_MKalpha_10kb%2CZI_NI_10kb%2Cinversions&highlight=2L%3A5028900..5038399" target="_blank">link</a></big></p> 
+			<br><br>
+			
+ 			<div id="6"><p><b><big>6. Uploading custom tracks</b></big></p></div>
+			<p class="classP_justified"></p>To upload you own tracks, press the &ldquo;Track&rdquo; button from the navigation menu located in the top-left area of the browser interface. Then, select the &ldquo;Open track file or URL&rdquo; option. Next, browse your local file or paste a remote URL in the corresponding box and customize the file type and display options. Finally, select whether to open immediately your custom track or add it to the tracks set and press the &ldquo;Open&rdquo; button.</p><br>			
+			<!-- <div class="classDiv_img"><img src="../../img/custom_QA/13.png" width="80%" height="30%" style="min-width:15em;"></div>
+			<div class="classDiv_img"><img src="../../img/custom_QA/14.png" width="80%" height="30%" style="min-width:15em;"></div>
+			<p class="classP_footer"><b>Figure 13.</b> Uploading custom tracks.</p><br> -->
+			<br><br>
 		</div>
     </body>
 </html>
-
-

@@ -171,14 +171,6 @@ printf "<Directory /var/www/html/dest>\n\tOptions -Indexes\n\tAllowOverride All\
 
 ############### LOAD NEW CSS ON GENOME.SCSS
 
-ln -s /data/css/* ${JBROWSE}/css/
-ln -s /data/img/* ${JBROWSE}/img/
-ln -s /data/html/ ${JBROWSE}/html
-
-mv ${JBROWSE}/src/JBrowse/Browser.js ${JBROWSE}/src/JBrowse/old.js
-ln -s /data/Browser.js ${JBROWSE}/src/JBrowse
-ln -s /data/downloadPool.php ${JBROWSE}/bin/
-
 ln -s /data/minimalSetup.sh ${JBROWSE}/
 cd ${JBROWSE} && bash minimalSetup.sh
-apachectl start
+# apachectl start

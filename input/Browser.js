@@ -1119,7 +1119,7 @@ initView: function() {
         this._addDownloadPoolRegion = new dijitMenuItem(
                     {
                         id: 'menubar_download_pool_region',
-                        label: 'Download region data',
+                        label: 'Download pool-seq or tracks',
                         iconClass: 'dijitIconFolderClosed',
                         onClick: function(){
                             var initLocation = window.location.href.match(/loc=([^&]*)/)[1];
@@ -1145,7 +1145,7 @@ initView: function() {
 
         this.addGlobalMenuItem( 'tools', this._addDownloadPoolGenomic );
 */
-        this._addDownloadWig = new dijitMenuItem(
+/*        this._addDownloadWig = new dijitMenuItem(
                     {
                         id: 'menubar_downloadwig',
                         label: 'Download full tracks',
@@ -1155,7 +1155,7 @@ initView: function() {
                         }
             }
         );
-
+*/
         /*this._addDownloadRegion = new dijitMenuItem(
                     {
                         id: 'menubar_download_region',
@@ -1167,7 +1167,7 @@ initView: function() {
                     }
                 );
         */
-        this.addGlobalMenuItem( 'tools', this._addDownloadWig );
+        /*this.addGlobalMenuItem( 'tools', this._addDownloadWig );*/
         //this.addGlobalMenuItem( 'tools', this._addDownloadRegion );
         this.renderGlobalMenu( 'tools', {text: 'Tools'}, menuBar );
 

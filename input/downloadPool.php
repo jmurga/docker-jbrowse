@@ -18,15 +18,36 @@ if (!isset($_POST["checkScaffold"]) && isset($_POST["coordinates"])){
     $nchr = $_POST["nchr"];
     $pop = $_POST["populations"];
     
-    $rngFile = "/var/www/html/dest/files/tmp/" . $fName . "_" . $pop . "_" . generateRandomString() . ".vcf";
+    $rng = generateRandomString();
+    $rngFile = "/var/www/html/dest/files/tmp/" . $fName . "_" . $pop . "_" . $rng . ".vcf";
+    $rngSubset = "/var/www/html/dest/files/tmp/subset_" . $rng . ".txt";
 
-    //echo "/var/www/html/dest/bin/bcftools/bcftools view -Oz -r $coord /var/www/html/dest/files/vcf/dest." . $pop . "." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz > $rngFile";
-    exec("/var/www/html/dest/bin/bcftools/bcftools view -r $coord /var/www/html/dest/files/vcf/dest." . $pop . "." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz > $rngFile");
+    echo "fgrep " . $pop . " /var/www/html/dest/files/vcf/destSamples.txt > " . $rngSubset;
+    echo "/var/www/html/dest/bin/bcftools/bcftools view -r $coord -S " . $rngSubset . " /var/www/html/dest/files/vcf/dest." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz > $rngFile";
+
+    exec("fgrep " . $pop . " /var/www/html/dest/files/vcf/destSamples.txt > " . $rngSubset);
+    exec("/var/www/html/dest/bin/bcftools/bcftools view -r $coord -S " . $rngSubset . " /var/www/html/dest/files/vcf/dest." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz > $rngFile");
 }else{
 
     $nchr = $_POST["nchr"];
     $pop = $_POST["populations"];
-    $rngFile = "/var/www/html/dest/files/vcf/dest." . $pop . "." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz";
+    $fName = str_replace('-','_',str_replace(':', '-', $coord));
+
+    $rng = generateRandomString();
+    $rngFile = "/var/www/html/dest/files/tmp/" . $nchr . "_" . $pop . "_" . $rng . ".vcf";
+    $rngSubset = "/var/www/html/dest/files/tmp/subset_" . $rng . ".txt";
+    
+    if($pop != 'ALL'){
+        echo "fgrep " . $pop . " /var/www/html/dest/files/vcf/destSamples.txt > " . $rngSubset;
+        echo "/var/www/html/dest/bin/bcftools/bcftools view -S " . $rngSubset . " /var/www/html/dest/files/vcf/dest." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz > $rngFile";
+        exec("fgrep " . $pop . " /var/www/html/dest/files/vcf/destSamples.txt > " . $rngSubset);
+        exec("/var/www/html/dest/bin/bcftools/bcftools view -S " . $rngSubset . " /var/www/html/dest/files/vcf/dest." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz > $rngFile");
+
+    }
+    else{
+        $rngFile = "/var/www/html/dest/files/vcf/dest." . $nchr . ".Aug22_2020.001.50.ann.vcf.gz";    
+    }
+    
 }
 
 

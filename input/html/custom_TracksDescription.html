@@ -38,7 +38,6 @@
                             <!-- <li><b>Unknown.</b> Number of unknown sites in the outgroup.</li> -->
                             <li><b>Pi.</b> Nucleotide diversity: average number of nucleotide differences per site between any two sequences (Jukes and Cantor 1969; Nei and Li 1979; Nei 1987).</li>
                             <li><b>theta.</b> Nucleotide polymorphism: proportion of nucleotide sites that are expected to be polymorphic in any suitable sample (Watterson 1975; Tajima 1993, 1996).</li>
-                            <li><b>hap_diversity_within.</b> Haplotype diversity within the population (Hudson, Slatkin and Maddison 1992).</li>
                             <li><b>P0.</b> Number of 4-fold (putatively neutral) segregating sites.</li>
                             <li><b>Pi.</b> Number of 0-fold (putatively selected) segregating sites.</li>
 <!-- <li><b>mneu.</b> Number of 4-fold (putatively neutral) total sites.</li>
@@ -49,8 +48,6 @@
                         <br>
                         <dd><ul> <li><b>HR recomb cM/Mb (Comeron et al).</b> Recombination estimates (cM/Mb) from <a href="#idLi_ref_9" id="idA_ref_9">Comeron <i>et al</i>., 2012</a>.</li>
                             <li><b>RRC cM/Mb (Fiston-Lavier et al).</b> Recombination estimates from <a href="#idLi_ref_10" id="idA_ref_10">Fiston-Lavier <i>et al</i>., 2010</a>. These metrics are calculated based on the <i>D. melanogaster</i> reference genome version 5.36.</li>
-                            <li><b>rhobp.</b> Historical recombination for each population (ρA = 2Ner; ρX = 8/3 Ner), computed using LDhelmet software (<a href="#idLi_ref_11" id="idA_ref_11">Chan <i>et al</i>., 2012</a>) in windows of 50 SNPs, which have been then mapped to non-overlapping windows of varying size ranging from 10 to 100kb. This metric has been calculated for populations with n≥10 only, by considering the 10 samples with the lowest percentage of ambiguous nucleotides (due to heterozygosity, IBD, or admixture), so that estimates are comparable among populations. This track specifically shows values of ρ per base pair (ρ/bp).</li>
-                            <li><b>rhokb.</b> Historical recombination estimates per kb (ρ/kb) for each population. Values have been calculated as in the track rhobp above.</li>
                         </ul></dd>
                         <br>
                         <dt>3. Selection tests based on SFS and/or variability</dt>
@@ -75,10 +72,6 @@
                         <dd><ul>
                             <li><b>Gene annotations.</b> Gene annotations in the human hg19 reference genome. This track is a set of gene predictions based on data from RefSeq, GenBank, CCDS, Rfam, and the tRNA Genes track. It includes both protein-coding genes and non-coding RNA genes. Annotations in this track are linked to the NCBI and UCSC databases. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=genes&hgta_track=knownGene&hgta_table=knownGene&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
                             <li><b>Reference Sequence.</b> Reference sequence of the human hg19 genome. [<a href="http://genome.ucsc.edu/cgi-bin/hgGateway?db=hg19" target="_blank">Track information</a>]</li>
-                            <li><b>Alignability of 36mers by GEM from ENCODE/CRG(Guigo).</b> Measures how often the sequence found at a particular location (36mers) aligns within the whole genome. It tolerates up to 2 mismatches. Ranges from 0 to 1. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=wgEncodeMapability&hgta_table=wgEncodeCrgMapabilityAlign36mer&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
-                            <li><b>Gaps.</b> Gaps in the assembly represented as black boxes. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=gap&hgta_table=gap&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
-                            <li><b>Mappability DAC Blacklisted Regions from ENCODE/DAC(Kundaje).</b> Identifies regions of the reference genome that are troublesome for high throughput sequencing aligners. Troubled regions may be due to repetitive elements or other anomalies. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=wgEncodeMapability&hgta_table=wgEncodeDacMapabilityConsensusExcludable&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
-                            <li><b>Uniqueness of 35bp Windows from ENCODE/OpenChrom(Duke).</b> Measures sequence uniqueness throughout the reference genome. Ranges from 0 to 1. [<a href="https://genome.ucsc.edu/cgi-bin/hgTables?db=hg19&hgta_group=map&hgta_track=wgEncodeMapability&hgta_table=wgEncodeDukeMapabilityUniqueness35bp&hgta_doSchema=describe+table+schema" target="_blank">Track information</a>]</li>
                         </ul></dd>
                         <br>
                         <dt>4. Variation</dt>
