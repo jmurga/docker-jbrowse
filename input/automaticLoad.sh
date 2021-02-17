@@ -5,11 +5,13 @@ ORGANISM="dm6"
 RAWDATA="dmel"
 
 CHROMOSOMES="2R 2L 3R 3L X"
-POPTEST="pi theta fst"
+POPTEST="fst"
+POPTEST="pi theta_watterson tajima"
+WINDOWS="100kb"
 # POPTEST="pi theta"
 
-declare -A COLORS=( ["pi"]="#065EE8" ["theta"]="#13B2FF" ["fst"]="#6565FB" ["recomb"]="#8D3762" ["RCC"]="#F6BAC4")
-declare -A METAPOP=( ["RAL"]="AM" ["ZI"]="AFR" )
+declare -A COLORS=( ["pi"]="#065EE8" ["theta_watterson"]="#13B2FF" ["fst"]="#6565FB" ["recomb"]="#8D3762" ["RCC"]="#F6BAC4")
+declare -A METAPOP=( ["RAL"]="AM" ["ZI"]="AFR" ["Europe"]="Europe")
 
 COLLAPSETRACKS="\n[trackSelector]\ncollapsedCategories="
 DEFAULTTRACKS="\n[GENERAL]\ndefaultTracks=reference_sequence,"
@@ -55,41 +57,41 @@ do
 done
 
 ###############################################
-###############  LOAD BY POP   ################
+###############  LOAD BY TEST   ################
 ###############################################
 
-for TEST in ${POPTEST}
-do
+# for TEST in ${POPTEST}
+# do
 
-    DESCRIPTION=$(fgrep $TEST ${DATA_DIR}/description.txt | cut -d'=' -f2)
-    echo ${TEST}
-    TRACKCOLOR=${COLORS[${TEST}]}
+#     DESCRIPTION=$(fgrep $TEST ${DATA_DIR}/description.txt | cut -d'=' -f2)
+#     echo ${TEST}
+#     TRACKCOLOR=${COLORS[${TEST}]}
 
-    if [[ ${TEST} == 'fst' ]];then
+#     if [[ ${TEST} == 'fst' ]];then
+#         SUBCAT="Variation/population_diferentiation"
+#         COLLAPSETRACKS="${COLLAPSETRACKS}${SUBCAT},"
+#     else
+#         SUBCAT='Variation/freq_nucleotide_variation'
+#         COLLAPSETRACKS="${COLLAPSETRACKS}${SUBCAT},"
+#     fi
 
-        SUBCAT="Variation/population_diferentiation"
-        COLLAPSETRACKS="${COLLAPSETRACKS}${SUBCAT},"
-    else
-        SUBCAT='Variation/freq_nucleotide_variation'
-        COLLAPSETRACKS="${COLLAPSETRACKS}${SUBCAT},"
-    fi
-
-    for TRACK in `ls ${JBROWSE}/files/${TEST}`
-    do
-        echo ${TRACK}
-        LABEL=$(echo ${TRACK} | cut -d'.' -f1 | tr '_' ' ')
-        POP=$(cut -d'_' -f1 <<< ${TRACK})
-        ${JBIN}/add-bw-track.pl --category "${SUBCAT}" \
-                --label "${LABEL}" \
-                --key "${TRACK}" \
-                --plot \
-                --pos_color "${TRACKCOLOR}" \
-                --bw_url ../../files/${TEST}/${TRACK} \
-                --config '{"metadata":{ "population":'\"${POP}\"',"metapopulation":'\"${METAPOP[${POP}]}\"',"freq_nucleotide_variation":'\"${TEST}\"',"window_size":"10kb","description":'${DESCRIPTION}'}}' \
-                --in ${JBROWSE_DATA}/${ORGANISM}/trackList.json \
-                --out ${JBROWSE_DATA}/${ORGANISM}/trackList.json
-    done
-done
+#     for TRACK in `ls ${JBROWSE}/files/${TEST}`
+#     do
+#         for W in $WINDOWS
+#         echo ${TRACK}
+#         LABEL=$(echo ${TRACK} | cut -d'.' -f1 | tr '_' ' ')
+#         POP=$(cut -d'_' -f1 <<< ${TRACK})
+#         ${JBIN}/add-bw-track.pl --category "${SUBCAT}" \
+#                 --label "${LABEL}" \
+#                 --key "${TRACK}" \
+#                 --plot \
+#                 --pos_color "${TRACKCOLOR}" \
+#                 --bw_url ../../files/${TEST}/${TRACK} \
+#                 --config '{"metadata":{ "population":'\"${POP}\"',"metapopulation":'\"${METAPOP[${POP}]}\"',"freq_nucleotide_variation":'\"${TEST}\"',"window_size":"10kb","description":'${DESCRIPTION}'}}' \
+#                 --in ${JBROWSE_DATA}/${ORGANISM}/trackList.json \
+#                 --out ${JBROWSE_DATA}/${ORGANISM}/trackList.json
+#     done
+# done
 
 ###############################################
 ############### DEFAULT TRACKS ################

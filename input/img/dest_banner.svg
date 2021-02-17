@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -16,7 +14,7 @@
    viewBox="0 0 3427.9901 297.22149"
    xml:space="preserve"
    sodipodi:docname="dest_banner.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
    width="3427.9902"
    height="297.2215"
    inkscape:export-filename="/home/jmurga/docker-jbrowse/input/img/dest_banner.png"
@@ -69,20 +67,21 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1920"
-   inkscape:window-height="1000"
+   inkscape:window-height="1003"
    id="namedview135"
    showgrid="false"
-   inkscape:zoom="0.4609357"
-   inkscape:cx="899.09549"
-   inkscape:cy="-313.58659"
+   inkscape:zoom="0.32593076"
+   inkscape:cx="1912.2588"
+   inkscape:cy="-267.2225"
    inkscape:window-x="0"
-   inkscape:window-y="44"
+   inkscape:window-y="41"
    inkscape:window-maximized="1"
    inkscape:current-layer="g935"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
-   fit-margin-bottom="0" />
+   fit-margin-bottom="0"
+   inkscape:document-rotation="0" />
 
 
 
@@ -339,15 +338,15 @@
    inkscape:export-ydpi="300"
    inkscape:export-xdpi="300"
    id="text870"
-   y="372.11087"
-   x="404.15463"
-   style="font-style:normal;font-weight:normal;font-size:163.91082764px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.09777117"
+   y="362.52054"
+   x="360.45917"
+   style="font-style:normal;font-weight:normal;font-size:152.932px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.82329"
    xml:space="preserve"><tspan
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:196.69300842px;line-height:4.25;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, ';fill:#ffffff;stroke-width:4.09777117"
-     y="372.11087"
-     x="404.15463"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.519px;line-height:4.25;font-family:'Open Sans Condensed';-inkscape-font-specification:'Open Sans Condensed, ';fill:#ffffff;stroke-width:3.82329"
+     y="362.52054"
+     x="360.45917"
      id="tspan868"
-     sodipodi:role="line">Drosophila Evolution in Space and Time</tspan></text>
+     sodipodi:role="line">Drosophila Evolution over Space and Time</tspan></text>
 
 </g>
 </svg>
