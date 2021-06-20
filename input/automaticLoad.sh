@@ -47,12 +47,10 @@ do
     DEFAULTTRACKS="${DEFAULTTRACKS}${LABEL},"
 
     if [[ ${ANN} =~ 'genes' ]];then
-        ${JBIN}/flatfile-to-json.pl --trackType CanvasFeatures --trackLabel ${LABEL} --autocomplete all --gff  ${DATA_DIR}/dmel/annotations/${ANN} --key $LABEL --config '{ "category": "ref_tracks", "menuTemplate" : [{"iconClass" : "dijitIconTask","action" : "contentDialog","title" : "{type} {name}","label" : "View details"},{"iconClass" : "dijitIconFilter"},{"label" : "Search gene on NCBI","title" : "Search on NCBI {name}","iconClass" : "dijitIconDatabase","action": "newWindow","url" : "https://www.ncbi.nlm.nih.gov/gquery/?term={id}"},{"label" : "Search gene on flybase","title" : "Search on flybase {name}","iconClass" : "dijitIconFile","action": "newWindow","url" : "http://flybase.org/reports/{id}"}]}' --metadata '{"general_tracks":"Gene annotations"}' \
-        --out ${JBROWSE_DATA}/${ORGANISM}/
+        ${JBIN}/flatfile-to-json.pl --trackType CanvasFeatures --trackLabel ${LABEL} --autocomplete all --bed  ${DATA_DIR}/dmel/annotations/${ANN} --key $LABEL --config '{ "category": "Reference tracks", "menuTemplate" : [{"iconClass" : "dijitIconTask","action" : "contentDialog","title" : "{type} {name}","label" : "View details"},{"iconClass" : "dijitIconFilter"},{"label" : "Search gene on NCBI","title" : "Search on NCBI {name}","iconClass" : "dijitIconDatabase","action": "newWindow","url" : "https://www.ncbi.nlm.nih.gov/gquery/?term={id}"},{"label" : "Search gene on flybase","title" : "Search on flybase {name}","iconClass" : "dijitIconFile","action": "newWindow","url" : "http://flybase.org/reports/{id}"}]}' --metadata '{"general_tracks":"Gene annotations"}' --out ${JBROWSE_DATA}/${ORGANISM}/
     else
         echo $ANN
-        ${JBIN}/flatfile-to-json.pl --className "feature2" --arrowheadClass "null" --trackLabel ${LABEL} --autocomplete all --gff ${DATA_DIR}/dmel/annotations/${ANN} --key $LABEL --config '{ "category": "ref_tracks"}' --metadata '{"general_tracks":"annotations"}' \
-        --out ${JBROWSE_DATA}/${ORGANISM}/
+        ${JBIN}/flatfile-to-json.pl --className "feature2" --arrowheadClass "null" --trackLabel ${LABEL} --autocomplete all --bed ${DATA_DIR}/dmel/annotations/${ANN} --key $LABEL --config '{ "category": "Reference tracks"}' --metadata '{"general_tracks":"annotations"}' --out ${JBROWSE_DATA}/${ORGANISM}/
     fi
 done
 

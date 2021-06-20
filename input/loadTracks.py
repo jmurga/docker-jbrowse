@@ -12,9 +12,9 @@ def loadTestByWindowsSize(path,test,ws,samples,subcat,description,trackList="/jb
 	df = pd.read_csv(samples) 
 	desc = pd.read_csv(description) 
 
-	# for f in files:
-		# print(f)
-	for f in tqdm(files):
+	for f in files:
+		print(f)
+	# for f in tqdm(files):
 		track = f.split('/')[-1]
 		pop = track.split(test)[0]
 
@@ -29,9 +29,9 @@ def loadTestByWindowsSize(path,test,ws,samples,subcat,description,trackList="/jb
 		color = colorDict[test]
 		
 		if(season is str and season not in sampleId):
-			label = sampleId + "_" + season + "_" + test
+			label = sampleId + "_" + season + "_" + test + "_" + ws
 		else:
-			label = sampleId + "_" + test
+			label = sampleId + "_" + test + "_" + ws 
 
 		if(test == 'tajima'):
 			testLabel = test.capitalize()+ "_D"
